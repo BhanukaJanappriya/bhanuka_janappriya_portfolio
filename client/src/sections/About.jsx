@@ -1,28 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award, Lightbulb, Users } from 'lucide-react';
+import { GraduationCap, Award, Lightbulb, UserCheck } from 'lucide-react';
 
 const About = () => {
   const infoCards = [
     {
       icon: <GraduationCap size={24} />,
-      title: 'Education',
-      content: 'BSc. (Honours) in Computer Science - University of Peradeniya (Undergraduate)'
+      title: 'Academic Excellence',
+      content: 'BSc. (Hons) in Computer Science, University of Peradeniya.'
     },
     {
       icon: <Lightbulb size={24} />,
-      title: 'Interests',
-      content: 'Image Processing, AI/ML, Probabilistic Symbolic AI, Web Development'
+      title: 'Technical Focus',
+      content: 'Advanced Full-Stack Systems, Image Processing, & Probabilistic AI.'
     },
     {
       icon: <Award size={24} />,
-      title: 'Achievements',
-      content: 'Final Year Researcher, Adobe Stock Contributor, Competitive Chess Player'
+      title: 'Notable Recognition',
+      content: 'GitHub Pull Shark (x2), Adobe Stock Contributor, Competitive Strategist.'
     },
     {
-      icon: <Users size={24} />,
-      title: 'Leadership',
-      content: 'Active participant in technical societies and clubs at University of Peradeniya'
+      icon: <UserCheck size={24} />,
+      title: 'Core Philosophy',
+      content: 'Bridging the gap between high-performance AI and human-readable logic.'
     }
   ];
 
@@ -36,7 +36,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">About Me</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Professional Profile</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full" />
         </motion.div>
 
@@ -47,22 +47,23 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
+            <h3 className="text-2xl font-bold mb-6 text-white">Full-Stack Developer & Researcher</h3>
             <p className="text-lg text-accent-gray leading-relaxed mb-6">
-              I am a passionate Computer Science undergraduate at the <span className="text-white font-medium">University of Peradeniya</span>, driven by the challenge of solving complex problems through technology. My expertise spans across full-stack development, but I have a deep-seated interest in <span className="text-white font-medium">Image Processing</span> and <span className="text-white font-medium">AI Explainability</span>.
+              I am a results-driven Computer Science undergraduate at the <span className="text-white font-medium">University of Peradeniya</span>, with a proven track record in architecting scalable web applications and AI-driven systems. My work is defined by a unique intersection of <span className="text-white font-medium">Full-Stack Engineering</span>, <span className="text-white font-medium">Computer Vision</span>, and <span className="text-white font-medium">Explainable AI</span>.
             </p>
             <p className="text-lg text-accent-gray leading-relaxed mb-8">
-              Currently, I'm working on my final year research project, **PROSE**, which explores probabilistic symbolic explanations in AI. Beyond code, I'm a creative designer and an avid chess player, which helps me maintain a balance between logic and creativity.
+              Currently, I am spearheading research on **PROSE (Probabilistic Symbolic Explainer)**, aiming to enhance the transparency of complex AI models. My experience as a professional Graphic Designer and Adobe Stock contributor ensures that I bring a high level of <span className="text-white font-medium">UI/UX polish</span> and visual storytelling to every technical project I deliver.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {infoCards.map((card, index) => (
-                <div key={index} className="flex items-start space-x-4">
+                <div key={index} className="flex items-start space-x-4 p-4 rounded-xl hover:bg-white/5 transition-colors">
                   <div className="p-2 rounded-lg bg-accent-blue/10 text-accent-blue">
                     {card.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold text-white">{card.title}</h4>
-                    <p className="text-sm text-accent-gray">{card.content}</p>
+                    <h4 className="font-bold text-white text-sm">{card.title}</h4>
+                    <p className="text-xs text-accent-gray mt-1 leading-relaxed">{card.content}</p>
                   </div>
                 </div>
               ))}
@@ -76,14 +77,17 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-square rounded-2xl overflow-hidden glass p-2">
-              <div className="w-full h-full rounded-xl bg-gradient-to-br from-accent-blue/20 to-black flex items-center justify-center">
-                <span className="text-6xl font-bold text-accent-blue/30 italic">BJ</span>
+            <div className="aspect-square rounded-3xl overflow-hidden glass p-3">
+              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent-blue/40 via-accent-blue/10 to-transparent flex items-center justify-center relative group">
+                <span className="text-8xl font-black text-white/10 group-hover:text-accent-blue/20 transition-all duration-700 select-none">BJ</span>
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-3/4 h-3/4 border-2 border-white/5 rounded-full animate-pulse" />
+                </div>
               </div>
             </div>
             {/* Decoration */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent-blue/20 rounded-full blur-2xl" />
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-white/5 rounded-full blur-2xl" />
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent-blue/20 rounded-full blur-[80px]" />
+            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-[80px]" />
           </motion.div>
         </div>
       </div>

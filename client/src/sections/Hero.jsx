@@ -16,13 +16,13 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block py-1 px-3 rounded-full bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6">
-            Full Stack Developer & Researcher
+            BSc. (Hons) Computer Science Undergraduate
           </span>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
             Bhanuka <span className="text-accent-blue">Janappriya</span>
           </h1>
           <p className="text-xl md:text-2xl text-accent-gray mb-10 leading-relaxed max-w-2xl mx-auto">
-            Crafting premium digital experiences through clean code, intelligent systems, and elegant design.
+            Full-Stack Developer & Researcher specializing in Image Processing and Probabilistic Symbolic Explainers (PROSE).
           </p>
         </motion.div>
 
@@ -37,12 +37,8 @@ const Hero = () => {
             <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
           </a>
           <a href="#contact" className="btn-secondary">
-            Contact Me
+            Let's Talk
           </a>
-          <button className="flex items-center text-sm font-medium hover:text-accent-blue transition-colors px-6 py-3">
-            <Download className="mr-2" size={18} />
-            Download Resume
-          </button>
         </motion.div>
       </div>
 

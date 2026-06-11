@@ -1,7 +1,7 @@
 import React from 'react';
 import { useData } from '../context/DataContext';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, Zap } from 'lucide-react';
 
 const Experience = () => {
   const { experience, loading } = useData();
@@ -16,55 +16,62 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Professional Experience</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Professional Milestones</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full" />
         </motion.div>
 
-        <div className="relative border-l border-white/10 ml-4 md:ml-0 md:left-1/2">
+        <div className="relative border-l-2 border-white/5 ml-4 md:ml-0 md:left-1/2">
           {experience.map((item, index) => (
             <motion.div
               key={item._id || index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`mb-12 flex flex-col md:flex-row items-center w-full ${
+              className={`mb-16 flex flex-col md:flex-row items-center w-full ${
                 index % 2 === 0 ? 'md:flex-row-reverse' : ''
               }`}
             >
               {/* Timeline dot */}
-              <div className="absolute left-0 md:left-1/2 -translate-x-[7px] md:-translate-x-1/2 w-3.5 h-3.5 bg-accent-blue rounded-full z-10 shadow-[0_0_10px_rgba(0,113,227,0.5)]" />
+              <div className="absolute left-0 md:left-1/2 -translate-x-[9px] md:-translate-x-1/2 w-4 h-4 bg-dark-soft border-2 border-accent-blue rounded-full z-10 shadow-[0_0_15px_rgba(0,113,227,0.4)]" />
 
               {/* Content Card */}
               <div className={`w-full md:w-[45%] ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-                <div className="glass p-8 rounded-2xl hover:border-accent-blue/30 transition-colors">
-                  <div className="flex items-center space-x-2 text-accent-blue text-xs font-bold uppercase tracking-widest mb-3">
-                    <Calendar size={14} />
-                    <span>{item.startDate} — {item.endDate}</span>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold mb-1">{item.title}</h3>
-                  <div className="flex items-center text-accent-gray text-sm mb-4">
-                    <Briefcase size={14} className="mr-1" />
-                    <span className="font-medium mr-2">{item.company}</span>
-                    {item.location && (
-                      <span className="flex items-center">
-                        <MapPin size={14} className="mr-1" />
-                        {item.location}
-                      </span>
-                    )}
+                <div className="glass p-10 rounded-[2rem] hover:border-accent-blue/30 transition-all group">
+                  <div className="flex flex-col mb-6">
+                    <div className="flex items-center space-x-2 text-accent-blue text-[10px] font-black uppercase tracking-[0.2em] mb-2">
+                      <Calendar size={12} />
+                      <span>{item.startDate} — {item.endDate}</span>
+                    </div>
+                    
+                    <h3 className="text-2xl font-black mb-1 group-hover:text-accent-blue transition-colors leading-tight">
+                      {item.title}
+                    </h3>
+                    
+                    <div className="flex flex-wrap items-center text-accent-gray text-xs font-bold gap-4 mt-2">
+                      <div className="flex items-center">
+                        <Briefcase size={12} className="mr-1.5 text-white/40" />
+                        <span className="uppercase tracking-wider">{item.company}</span>
+                      </div>
+                      {item.location && (
+                        <div className="flex items-center">
+                          <MapPin size={12} className="mr-1.5 text-white/40" />
+                          <span>{item.location}</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
-                  <ul className="space-y-2">
+                  <div className="space-y-4">
                     {item.description.map((desc, i) => (
-                      <li key={i} className="text-sm text-accent-gray leading-relaxed flex items-start">
-                        <span className="w-1.5 h-1.5 bg-accent-blue/50 rounded-full mr-2 mt-1.5 flex-shrink-0" />
-                        {desc}
-                      </li>
+                      <div key={i} className="flex items-start text-sm text-accent-gray leading-relaxed">
+                        <Zap size={14} className="text-accent-blue mr-3 mt-1 flex-shrink-0 opacity-50" />
+                        <p>{desc}</p>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               </div>
 

@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { useData } from '../context/DataContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Code } from 'lucide-react';
+import { ExternalLink, Code, CheckCircle2 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const { projects, loading } = useData();
   const [filter, setFilter] = useState('All');
 
-  // Extract unique categories/technologies for filtering
   const allTechs = ['All', ...new Set(projects.flatMap(p => p.technologies))];
-  // To keep it clean, maybe just use top 5-6 techs + All
   const topTechs = allTechs.slice(0, 8);
 
   const filteredProjects = filter === 'All' 
@@ -29,7 +27,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Portfolio Showcase</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full mb-8" />
           
           <div className="flex flex-wrap justify-center gap-3">
@@ -37,9 +35,9 @@ const Projects = () => {
               <button
                 key={tech}
                 onClick={() => setFilter(tech)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all ${
                   filter === tech 
-                    ? 'bg-accent-blue text-white' 
+                    ? 'bg-accent-blue text-white shadow-[0_0_20px_rgba(0,113,227,0.3)]' 
                     : 'glass text-accent-gray hover:text-white'
                 }`}
               >
@@ -51,54 +49,67 @@ const Projects = () => {
 
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
         >
           <AnimatePresence mode='popLayout'>
             {filteredProjects.map((project) => (
               <motion.div
                 key={project._id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="glass rounded-2xl overflow-hidden flex flex-col group"
+                transition={{ duration: 0.5 }}
+                className="glass rounded-[2.5rem] overflow-hidden flex flex-col group border-white/5 hover:border-accent-blue/20 transition-all duration-500"
               >
-                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent-blue/10 to-black p-8 flex items-center justify-center">
-                  <Code size={48} className="text-accent-blue/20 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent-blue/20 via-black to-black p-12 flex items-center justify-center">
+                  <Code size={80} className="text-accent-blue/10 group-hover:scale-110 group-hover:text-accent-blue/20 transition-all duration-700" />
+                  
+                  <div className="absolute top-6 left-6 flex space-x-2">
+                     {project.technologies.slice(0, 2).map(tech => (
+                        <span key={tech} className="glass px-3 py-1 rounded-lg text-[9px] font-black text-white/50 uppercase tracking-tighter">
+                           {tech}
+                        </span>
+                     ))}
+                  </div>
+
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center space-x-6">
                     {project.githubLink && (
-                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-black rounded-full hover:bg-accent-blue hover:text-white transition-colors">
-                        <FaGithub size={20} />
+                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="p-4 bg-white text-black rounded-full hover:bg-accent-blue hover:text-white transition-all transform hover:scale-110">
+                        <FaGithub size={24} />
                       </a>
                     )}
                     {project.liveDemo && (
-                      <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-black rounded-full hover:bg-accent-blue hover:text-white transition-colors">
-                        <ExternalLink size={20} />
+                      <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="p-4 bg-white text-black rounded-full hover:bg-accent-blue hover:text-white transition-all transform hover:scale-110">
+                        <ExternalLink size={24} />
                       </a>
                     )}
                   </div>
                 </div>
 
-                <div className="p-6 flex-grow flex flex-col">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.slice(0, 3).map(tech => (
-                      <span key={tech} className="text-[10px] uppercase tracking-wider font-bold text-accent-blue bg-accent-blue/10 px-2 py-0.5 rounded">
+                <div className="p-10 flex-grow flex flex-col">
+                  <h3 className="text-2xl font-black mb-4 group-hover:text-accent-blue transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-accent-gray text-sm leading-relaxed mb-8">
+                    {project.description}
+                  </p>
+
+                  <div className="space-y-3 mb-8">
+                    {project.features.slice(0, 3).map((feature, i) => (
+                      <div key={i} className="flex items-start text-xs text-white/70">
+                        <CheckCircle2 size={14} className="text-accent-blue mr-3 mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-2">
+                    {project.technologies.map(tech => (
+                      <span key={tech} className="text-[9px] font-bold text-accent-gray bg-white/5 px-2 py-1 rounded-md">
                         {tech}
                       </span>
                     ))}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-accent-blue transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-accent-gray text-sm mb-6 line-clamp-3">
-                    {project.description}
-                  </p>
-                  
-                  <div className="mt-auto pt-4 border-t border-white/5 flex justify-between items-center">
-                    <a href={project.githubLink} className="text-sm font-semibold flex items-center text-white hover:text-accent-blue transition-colors">
-                      Learn More <ArrowRight className="ml-1" size={14} />
-                    </a>
                   </div>
                 </div>
               </motion.div>

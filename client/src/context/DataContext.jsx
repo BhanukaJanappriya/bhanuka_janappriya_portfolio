@@ -8,6 +8,7 @@ export const DataProvider = ({ children }) => {
   const [skills, setSkills] = useState([]);
   const [experience, setExperience] = useState([]);
   const [research, setResearch] = useState([]);
+  const [certifications, setCertifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -15,17 +16,19 @@ export const DataProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const [projRes, skillRes, expRes, resRes] = await Promise.all([
+        const [projRes, skillRes, expRes, resRes, certRes] = await Promise.all([
           api.fetchProjects(),
           api.fetchSkills(),
           api.fetchExperience(),
           api.fetchResearch(),
+          api.fetchCertifications(),
         ]);
 
         setProjects(projRes.data);
         setSkills(skillRes.data);
         setExperience(expRes.data);
         setResearch(resRes.data);
+        setCertifications(certRes.data);
         setError(null);
       } catch (err) {
         console.error('Error fetching data:', err);
@@ -39,7 +42,7 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ projects, skills, experience, research, loading, error }}>
+    <DataContext.Provider value={{ projects, skills, experience, research, certifications, loading, error }}>
       {children}
     </DataContext.Provider>
   );

@@ -2,6 +2,7 @@ const Project = require('../models/Project');
 const Skill = require('../models/Skill');
 const Experience = require('../models/Experience');
 const Research = require('../models/Research');
+const Certification = require('../models/Certification');
 
 const getProjects = async (req, res) => {
   try {
@@ -39,9 +40,19 @@ const getResearch = async (req, res) => {
   }
 };
 
+const getCertifications = async (req, res) => {
+  try {
+    const certifications = await Certification.find().sort({ order: 1 });
+    res.json(certifications);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 module.exports = {
   getProjects,
   getSkills,
   getExperience,
-  getResearch
+  getResearch,
+  getCertifications
 };

@@ -31,37 +31,47 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Technical Skills</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Technical Arsenal</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full" />
         </motion.div>
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {categories.map((category) => {
             const categorySkills = skills.filter(s => s.category === category);
             if (categorySkills.length === 0) return null;
 
             return (
               <div key={category}>
-                <h3 className="text-xl font-bold mb-6 text-accent-blue/80 uppercase tracking-widest text-sm">
-                  {category}
-                </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div className="flex items-center space-x-4 mb-8">
+                   <h3 className="text-sm font-black uppercase tracking-[0.2em] text-accent-blue">
+                     {category}
+                   </h3>
+                   <div className="h-[1px] flex-grow bg-white/5" />
+                </div>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
                   {categorySkills.map((skill, index) => (
                     <motion.div
                       key={skill._id || index}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      whileHover={{ 
+                        y: -5, 
+                        backgroundColor: "rgba(255, 255, 255, 0.03)",
+                        borderColor: "rgba(0, 113, 227, 0.3)"
+                      }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center space-y-3 group transition-all duration-300"
+                      className="glass px-4 py-6 rounded-2xl flex flex-col items-center justify-center text-center space-y-4 group border-white/5 transition-all duration-300"
                     >
-                      <div className="text-accent-gray group-hover:text-accent-blue transition-colors duration-300">
+                      <div className="text-accent-gray group-hover:text-accent-blue group-hover:scale-110 transition-all duration-300">
                         {getIcon(skill.icon)}
                       </div>
-                      <span className="text-sm font-medium">{skill.name}</span>
+                      <span className="text-[11px] font-black uppercase tracking-wider text-white/70 group-hover:text-white transition-colors">
+                        {skill.name}
+                      </span>
                     </motion.div>
                   ))}
                 </div>

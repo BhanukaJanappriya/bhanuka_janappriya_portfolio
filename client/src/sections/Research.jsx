@@ -1,7 +1,7 @@
 import React from 'react';
 import { useData } from '../context/DataContext';
 import { motion } from 'framer-motion';
-import { Beaker, Target, Cpu, BookOpen } from 'lucide-react';
+import { Beaker, Target, Cpu, BookOpen, Layers } from 'lucide-react';
 
 const Research = () => {
   const { research, loading } = useData();
@@ -18,7 +18,7 @@ const Research = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Research Work</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Academic Research</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full" />
         </motion.div>
 
@@ -30,80 +30,78 @@ const Research = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="glass p-8 md:p-12 rounded-3xl relative overflow-hidden"
+              className="glass p-8 md:p-12 rounded-[2rem] relative overflow-hidden group border-white/5 hover:border-accent-blue/20 transition-all duration-500"
             >
-              {/* Background accent */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-accent-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+              {/* Background gradient */}
+              <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none group-hover:bg-accent-blue/10 transition-colors duration-700" />
 
               <div className="relative z-10">
-                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
-                  <div>
-                    <span className="text-accent-blue font-bold text-sm uppercase tracking-widest mb-2 block">
-                      {item.status || 'Ongoing Research'}
-                    </span>
-                    <h3 className="text-2xl md:text-4xl font-bold">{item.title}</h3>
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 mb-10">
+                  <div className="max-w-2xl">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <span className="bg-accent-blue/10 text-accent-blue px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-accent-blue/20">
+                        {item.status || 'Active Research'}
+                      </span>
+                      <div className="flex items-center text-accent-gray text-xs">
+                        <BookOpen size={14} className="mr-1.5" />
+                        Final Year Thesis
+                      </div>
+                    </div>
+                    <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-6 leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-lg text-accent-gray leading-relaxed font-medium">
+                      {item.summary}
+                    </p>
                   </div>
-                  <div className="flex flex-wrap gap-3">
+                  
+                  <div className="flex flex-wrap gap-2 lg:justify-end lg:max-w-[300px]">
                     {item.technologies.map(tech => (
-                      <span key={tech} className="glass px-4 py-2 rounded-full text-xs font-medium">
+                      <span key={tech} className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-[11px] font-bold text-white/70 whitespace-nowrap">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <p className="text-lg text-accent-gray leading-relaxed mb-10 max-w-4xl">
-                  {item.summary}
-                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10 border-t border-white/5">
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3 text-white font-bold mb-2">
+                       <Target size={18} className="text-accent-blue" />
+                       <span className="text-sm tracking-wide uppercase">Core Objectives</span>
+                    </div>
+                    <ul className="space-y-3">
+                      {item.objectives.map((obj, i) => (
+                        <li key={i} className="text-sm text-accent-gray flex items-start leading-relaxed">
+                          <span className="w-1.5 h-1.5 bg-accent-blue/40 rounded-full mr-3 mt-1.5 flex-shrink-0" />
+                          {obj}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 rounded-2xl bg-accent-blue/10 text-accent-blue">
-                        <Target size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-white mb-2">Objectives</h4>
-                        <ul className="space-y-2">
-                          {item.objectives.map((obj, i) => (
-                            <li key={i} className="text-sm text-accent-gray flex items-center">
-                              <span className="w-1.5 h-1.5 bg-accent-blue rounded-full mr-2" />
-                              {obj}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3 text-white font-bold mb-2">
+                       <Layers size={18} className="text-accent-blue" />
+                       <span className="text-sm tracking-wide uppercase">Domain Focus</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {item.focusAreas.map((area, i) => (
+                        <div key={i} className="text-xs font-semibold px-4 py-2 bg-white/5 rounded-xl text-accent-gray border border-white/5">
+                          {area}
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 rounded-2xl bg-accent-blue/10 text-accent-blue">
-                        <Cpu size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-white mb-2">Focus Areas</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {item.focusAreas.map((area, i) => (
-                            <span key={i} className="text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-lg text-accent-gray">
-                              {area}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                  <div className="space-y-4 lg:pl-6">
+                    <div className="flex items-center space-x-3 text-white font-bold mb-2">
+                       <Cpu size={18} className="text-accent-blue" />
+                       <span className="text-sm tracking-wide uppercase">Methodology</span>
                     </div>
-                    
-                    {item.supervisor && (
-                      <div className="flex items-start space-x-4">
-                        <div className="p-3 rounded-2xl bg-accent-blue/10 text-accent-blue">
-                          <Beaker size={24} />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-white mb-1">Supervisor</h4>
-                          <p className="text-sm text-accent-gray">{item.supervisor}</p>
-                        </div>
-                      </div>
-                    )}
+                    <p className="text-sm text-accent-gray leading-relaxed">
+                      Leveraging a hybrid approach of symbolic reasoning and probabilistic graphical models to deconstruct black-box AI outputs into actionable, human-readable insights.
+                    </p>
                   </div>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import Skills from '../sections/Skills';
 import Projects from '../sections/Projects';
 import Research from '../sections/Research';
 import Experience from '../sections/Experience';
+import Certifications from '../sections/Certifications';
 import Contact from '../sections/Contact';
 import { motion } from 'framer-motion';
 
@@ -21,6 +22,7 @@ const Home = () => {
       <Projects />
       <Research />
       <Experience />
+      <Certifications />
       <Contact />
     </motion.div>
   );

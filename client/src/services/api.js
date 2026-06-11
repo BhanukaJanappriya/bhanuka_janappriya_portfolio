@@ -8,6 +8,7 @@ export const fetchProjects = () => API.get('/projects');
 export const fetchSkills = () => API.get('/skills');
 export const fetchExperience = () => API.get('/experience');
 export const fetchResearch = () => API.get('/research');
+export const fetchCertifications = () => API.get('/certifications');
 export const sendMessage = (messageData) => API.post('/contact', messageData);
 
 export default API;
