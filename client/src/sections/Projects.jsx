@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useData } from '../context/DataContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ExternalLink, Code } from 'lucide-react';
+import { ExternalLink, Code } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const { projects, loading } = useData();
@@ -68,7 +69,7 @@ const Projects = () => {
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     {project.githubLink && (
                       <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="p-3 bg-white text-black rounded-full hover:bg-accent-blue hover:text-white transition-colors">
-                        <Github size={20} />
+                        <FaGithub size={20} />
                       </a>
                     )}
                     {project.liveDemo && (

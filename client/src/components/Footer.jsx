@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Mail, ArrowUp } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -21,10 +22,10 @@ const Footer = () => {
 
           <div className="flex space-x-6">
             <a href="https://github.com/BhanukaJanappriya" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors">
-              <Github size={24} />
+              <FaGithub size={24} />
             </a>
             <a href="https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors">
-              <Linkedin size={24} />
+              <FaLinkedin size={24} />
             </a>
             <a href="mailto:your-email@gmail.com" className="hover:text-accent-blue transition-colors">
               <Mail size={24} />

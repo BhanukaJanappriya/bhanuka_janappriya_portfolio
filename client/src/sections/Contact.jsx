@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Send, MapPin, Loader2 } from 'lucide-react';
+import { Mail, Send, MapPin, Loader2 } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { sendMessage } from '../services/api';
 
 const Contact = () => {
@@ -84,10 +85,10 @@ const Contact = () => {
 
             <div className="flex space-x-6 mt-12">
               <a href="https://github.com/BhanukaJanappriya" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors">
-                <Github size={24} />
+                <FaGithub size={24} />
               </a>
               <a href="https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors">
-                <Linkedin size={24} />
+                <FaLinkedin size={24} />
               </a>
             </div>
           </motion.div>
