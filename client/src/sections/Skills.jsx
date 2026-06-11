@@ -16,9 +16,9 @@ const Skills = () => {
     'UI/UX'
   ];
 
-  const getIcon = (iconName) => {
+  const getIcon = (iconName, color) => {
     const IconComponent = SiIcons[iconName];
-    return IconComponent ? <IconComponent size={24} /> : null;
+    return IconComponent ? <IconComponent size={28} style={{ color: color || 'currentColor' }} /> : null;
   };
 
   if (loading) return null;
@@ -58,18 +58,20 @@ const Skills = () => {
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       whileHover={{ 
-                        y: -5, 
-                        backgroundColor: "rgba(255, 255, 255, 0.03)",
-                        borderColor: "rgba(0, 113, 227, 0.3)"
+                        y: -8, 
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        borderColor: `${skill.color}44` // Add 44 for partial transparency
                       }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className="glass px-4 py-6 rounded-2xl flex flex-col items-center justify-center text-center space-y-4 group border-white/5 transition-all duration-300"
+                      className="glass px-4 py-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4 group border-white/5 transition-all duration-300"
                     >
-                      <div className="text-accent-gray group-hover:text-accent-blue group-hover:scale-110 transition-all duration-300">
-                        {getIcon(skill.icon)}
+                      <div 
+                        className="transition-all duration-500 group-hover:scale-125 filter group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+                      >
+                        {getIcon(skill.icon, skill.color)}
                       </div>
-                      <span className="text-[11px] font-black uppercase tracking-wider text-white/70 group-hover:text-white transition-colors">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-white/60 group-hover:text-white transition-colors">
                         {skill.name}
                       </span>
                     </motion.div>

@@ -8,6 +8,7 @@ const skillSchema = new mongoose.Schema({
     enum: ['Programming Languages', 'Frontend', 'Backend', 'Databases', 'Frameworks', 'AI/ML', 'Tools', 'Version Control', 'Cloud', 'DevOps', 'UI/UX']
   },
   icon: String, // String reference to a React Icon
+  color: String, // Hex color code for the brand
   level: { type: String, default: 'Intermediate' }
 });
 

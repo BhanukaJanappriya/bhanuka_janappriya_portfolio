@@ -68,45 +68,44 @@ const projects = [
 
 const skills = [
   // Programming Languages
-  { name: 'Python', category: 'Programming Languages', icon: 'SiPython' },
-  { name: 'Java', category: 'Programming Languages', icon: 'SiJava' },
-  { name: 'JavaScript', category: 'Programming Languages', icon: 'SiJavascript' },
-  { name: 'TypeScript', category: 'Programming Languages', icon: 'SiTypescript' },
-  { name: 'C', category: 'Programming Languages', icon: 'SiC' },
-  { name: 'C++', category: 'Programming Languages', icon: 'SiCplusplus' },
-  { name: 'SQL', category: 'Programming Languages', icon: 'SiPostgresql' },
+  { name: 'Python', category: 'Programming Languages', icon: 'SiPython', color: '#3776AB' },
+  { name: 'Java', category: 'Programming Languages', icon: 'SiJava', color: '#007396' },
+  { name: 'JavaScript', category: 'Programming Languages', icon: 'SiJavascript', color: '#F7DF1E' },
+  { name: 'TypeScript', category: 'Programming Languages', icon: 'SiTypescript', color: '#3178C6' },
+  { name: 'C', category: 'Programming Languages', icon: 'SiC', color: '#A8B9CC' },
+  { name: 'C++', category: 'Programming Languages', icon: 'SiCplusplus', color: '#00599C' },
+  { name: 'SQL', category: 'Programming Languages', icon: 'SiPostgresql', color: '#4169E1' },
   
   // Frontend
-  { name: 'React', category: 'Frontend', icon: 'SiReact' },
-  { name: 'Tailwind CSS', category: 'Frontend', icon: 'SiTailwindcss' },
-  { name: 'HTML5', category: 'Frontend', icon: 'SiHtml5' },
-  { name: 'CSS3', category: 'Frontend', icon: 'SiCss3' },
+  { name: 'React', category: 'Frontend', icon: 'SiReact', color: '#61DAFB' },
+  { name: 'Tailwind CSS', category: 'Frontend', icon: 'SiTailwindcss', color: '#06B6D4' },
+  { name: 'HTML5', category: 'Frontend', icon: 'SiHtml5', color: '#E34F26' },
+  { name: 'CSS3', category: 'Frontend', icon: 'SiCss3', color: '#1572B6' },
   
   // Backend
-  { name: 'Node.js', category: 'Backend', icon: 'SiNodedotjs' },
-  { name: 'Express.js', category: 'Backend', icon: 'SiExpress' },
-  { name: 'Django', category: 'Backend', icon: 'SiDjango' },
-  { name: 'FastAPI', category: 'Backend', icon: 'SiFastapi' },
+  { name: 'Node.js', category: 'Backend', icon: 'SiNodedotjs', color: '#339933' },
+  { name: 'Express.js', category: 'Backend', icon: 'SiExpress', color: '#000000' },
+  { name: 'Django', category: 'Backend', icon: 'SiDjango', color: '#092E20' },
+  { name: 'FastAPI', category: 'Backend', icon: 'SiFastapi', color: '#05998B' },
   
   // AI/ML
-  { name: 'LangChain', category: 'AI/ML', icon: 'SiLangchain' },
-  { name: 'PyTorch', category: 'AI/ML', icon: 'SiPytorch' },
-  { name: 'OpenCV', category: 'AI/ML', icon: 'SiOpencv' },
-  { name: 'Hugging Face', category: 'AI/ML', icon: 'SiHuggingface' },
+  { name: 'LangChain', category: 'AI/ML', icon: 'SiLangchain', color: '#1C3C3C' },
+  { name: 'PyTorch', category: 'AI/ML', icon: 'SiPytorch', color: '#EE4C2C' },
+  { name: 'OpenCV', category: 'AI/ML', icon: 'SiOpencv', color: '#5C3EE8' },
+  { name: 'Hugging Face', category: 'AI/ML', icon: 'SiHuggingface', color: '#FFD21E' },
   
   // Databases
-  { name: 'MongoDB', category: 'Databases', icon: 'SiMongodb' },
-  { name: 'PostgreSQL', category: 'Databases', icon: 'SiPostgresql' },
-  { name: 'MySQL', category: 'Databases', icon: 'SiMysql' },
-  { name: 'ChromaDB', category: 'Databases', icon: 'SiChroma' },
+  { name: 'MongoDB', category: 'Databases', icon: 'SiMongodb', color: '#47A248' },
+  { name: 'PostgreSQL', category: 'Databases', icon: 'SiPostgresql', color: '#4169E1' },
+  { name: 'MySQL', category: 'Databases', icon: 'SiMysql', color: '#4479A1' },
   
   // Tools & UI/UX
-  { name: 'Git', category: 'Version Control', icon: 'SiGit' },
-  { name: 'Linux', category: 'Tools', icon: 'SiLinux' },
-  { name: 'Arduino', category: 'Tools', icon: 'SiArduino' },
-  { name: 'Figma', category: 'UI/UX', icon: 'SiFigma' },
-  { name: 'Adobe Photoshop', category: 'UI/UX', icon: 'SiAdobephotoshop' },
-  { name: 'Adobe Illustrator', category: 'UI/UX', icon: 'SiAdobeillustrator' }
+  { name: 'Git', category: 'Version Control', icon: 'SiGit', color: '#F05032' },
+  { name: 'Linux', category: 'Tools', icon: 'SiLinux', color: '#FCC624' },
+  { name: 'Arduino', category: 'Tools', icon: 'SiArduino', color: '#00979D' },
+  { name: 'Figma', category: 'UI/UX', icon: 'SiFigma', color: '#F24E1E' },
+  { name: 'Adobe Photoshop', category: 'UI/UX', icon: 'SiAdobephotoshop', color: '#31A8FF' },
+  { name: 'Adobe Illustrator', category: 'UI/UX', icon: 'SiAdobeillustrator', color: '#FF9A00' }
 ];
 
 const experiences = [
@@ -173,7 +172,7 @@ const certifications = [
 const seedDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    console.log('Connected to MongoDB for enriched seeding...');
+    console.log('Connected to MongoDB for colored seeding...');
 
     await Project.deleteMany();
     await Skill.deleteMany();
@@ -187,7 +186,7 @@ const seedDB = async () => {
     await Research.insertMany(research);
     await Certification.insertMany(certifications);
 
-    console.log('Data Seeded Successfully with Enriched Content!');
+    console.log('Data Seeded Successfully with Brand Colors!');
     process.exit();
   } catch (error) {
     console.error('Error seeding data:', error);
