@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
+import myImg from '../assets/myimg.png';
 
 const Hero = () => {
   return (
@@ -9,36 +10,64 @@ const Hero = () => {
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent-blue/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-blue/5 rounded-full blur-3xl" />
 
-      <div className="max-w-4xl mx-auto text-center z-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center lg:text-left"
         >
-          <span className="inline-block py-1 px-3 rounded-full bg-accent-blue/10 text-accent-blue text-sm font-medium mb-6">
+          <span className="inline-block py-1 px-3 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-black uppercase tracking-widest mb-6">
             BSc. (Hons) Computer Science Undergraduate
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Bhanuka <span className="text-accent-blue">Janappriya</span>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+            Bhanuka <br />
+            <span className="text-accent-blue font-black">Janappriya</span>
           </h1>
-          <p className="text-xl md:text-2xl text-accent-gray mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-accent-gray mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
             Full-Stack Developer & Researcher specializing in Image Processing and Probabilistic Symbolic Explainers (PROSE).
           </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#projects" className="btn-primary flex items-center group">
+              View Projects
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+            </a>
+            <a href="#contact" className="btn-secondary font-bold">
+              Let's Talk
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+          initial={{ opacity: 0, scale: 0.8, x: 30 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative flex justify-center items-center"
         >
-          <a href="#projects" className="btn-primary flex items-center group">
-            View Projects
-            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
-          </a>
-          <a href="#contact" className="btn-secondary">
-            Let's Talk
-          </a>
+          <div className="relative w-72 h-72 md:w-[450px] md:h-[450px]">
+            {/* Decorative background for image */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-transparent rounded-[3rem] rotate-6 scale-105 blur-sm" />
+            <div className="absolute inset-0 border border-white/5 rounded-[3rem] -rotate-3" />
+            
+            <div className="relative w-full h-full rounded-[3rem] overflow-hidden glass p-3 border-white/10">
+              <img 
+                src={myImg} 
+                alt="Bhanuka Janappriya" 
+                className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 hover:scale-105"
+              />
+            </div>
+
+            {/* Floating badges or elements */}
+            <motion.div 
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              className="absolute -top-6 -right-6 glass p-4 rounded-2xl border-white/10 hidden md:block shadow-2xl"
+            >
+               <div className="text-[10px] font-black uppercase tracking-widest text-accent-blue mb-1">Status</div>
+               <div className="text-xs font-bold">Open for Internships</div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 
