@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Globe } from 'lucide-react';
 import { FaPinterest } from 'react-icons/fa';
-const adobestockVideo = "/adobestock.mp4";
-const pinterestVideo = "/pinterest.mp4";
+const adobestockVideo = "https://docs.google.com/uc?export=download&id=1CDTjEZf6e7m8dtYRKSenJEe9Z4XPqB3t";
+const pinterestVideo = "https://docs.google.com/uc?export=download&id=1I4ZUBPqwOvDAg8Dcrgygc9QTE_RZTZ57";
 
 const AdobeStock = () => {
   const portfolios = [
