@@ -2,6 +2,7 @@ import Hero from '../sections/Hero';
 import About from '../sections/About';
 import Skills from '../sections/Skills';
 import Projects from '../sections/Projects';
+import AdobeStock from '../sections/AdobeStock';
 import Research from '../sections/Research';
 import Experience from '../sections/Experience';
 import Certifications from '../sections/Certifications';
@@ -19,6 +20,7 @@ const Home = () => {
       <About />
       <Skills />
       <Projects />
+      <AdobeStock />
       <Research />
       <Experience />
       <Certifications />
