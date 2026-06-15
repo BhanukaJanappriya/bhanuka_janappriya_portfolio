@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
-import myImg from '../assets/myimg.png';
 
 const Hero = () => {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center section-padding overflow-hidden">
       {/* Background elements */}
@@ -50,12 +51,23 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-transparent rounded-[3rem] rotate-6 scale-105 blur-sm" />
             <div className="absolute inset-0 border border-white/5 rounded-[3rem] -rotate-3" />
             
-            <div className="relative w-full h-full rounded-[3rem] overflow-hidden glass p-3 border-white/10">
-              <img 
-                src={myImg} 
-                alt="Bhanuka Janappriya" 
-                className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 hover:scale-105"
-              />
+            <div className="relative w-full h-full rounded-[3rem] overflow-hidden glass p-3 border-white/10 flex items-center justify-center">
+              {!imgError ? (
+                <img 
+                  src="/myimg2.png" 
+                  alt="Bhanuka Janappriya" 
+                  onError={() => setImgError(true)}
+                  className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-full rounded-[2.2rem] bg-gradient-to-br from-accent-blue/20 via-dark-card to-black flex flex-col items-center justify-center text-center p-6 border border-white/5">
+                  <div className="w-24 h-24 rounded-full bg-accent-blue/10 border border-accent-blue/30 flex items-center justify-center mb-6 text-accent-blue shadow-[0_0_20px_rgba(0,113,227,0.2)]">
+                    <span className="text-3xl font-black tracking-wider">BJ</span>
+                  </div>
+                  <h4 className="text-xl font-black text-white mb-1">Bhanuka Janappriya</h4>
+                  <p className="text-sm text-accent-gray max-w-[240px]">Full-Stack Developer & Researcher</p>
+                </div>
+              )}
             </div>
 
             {/* Floating badges or elements */}

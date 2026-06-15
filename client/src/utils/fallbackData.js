@@ -1,12 +1,4 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const Project = require('../models/Project');
-const Skill = require('../models/Skill');
-const Experience = require('../models/Experience');
-const Research = require('../models/Research');
-const Certification = require('../models/Certification');
-
-const projects = [
+export const fallbackProjects = [
   {
     title: 'PROSE: PRObabilistic Symbolic Explainer',
     description: 'Final year research project developing a framework to provide interpretable, symbolic explanations for complex probabilistic models. Focused on bridging the gap between high-performance "black-box" AI and human-understandable logic.',
@@ -66,7 +58,7 @@ const projects = [
   }
 ];
 
-const skills = [
+export const fallbackSkills = [
   // Programming Languages
   { name: 'Python', category: 'Programming Languages', icon: 'SiPython', color: '#3776AB' },
   { name: 'Java', category: 'Programming Languages', icon: 'SiJava', color: '#007396' },
@@ -108,7 +100,7 @@ const skills = [
   { name: 'Adobe Illustrator', category: 'UI/UX', icon: 'SiAdobeillustrator', color: '#FF9A00' }
 ];
 
-const experiences = [
+export const fallbackExperience = [
   {
     title: 'Junior Treasurer',
     company: 'Computer Society University of Peradeniya (CSUP)',
@@ -276,7 +268,7 @@ const experiences = [
   }
 ];
 
-const research = [
+export const fallbackResearch = [
   {
     title: 'PROSE: PRObabilistic Symbolic Explainer',
     summary: 'Developing a novel framework that bridges the gap between complex probabilistic models and human-understandable logic through symbolic explanations.',
@@ -291,7 +283,7 @@ const research = [
   }
 ];
 
-const certifications = [
+export const fallbackCertifications = [
   {
     title: 'GitHub Pull Shark (x2)',
     issuer: 'GitHub',
@@ -299,30 +291,3 @@ const certifications = [
     link: 'https://github.com/BhanukaJanappriya'
   }
 ];
-
-const seedDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGODB_URI);
-    console.log('Connected to MongoDB for colored seeding...');
-
-    await Project.deleteMany();
-    await Skill.deleteMany();
-    await Experience.deleteMany();
-    await Research.deleteMany();
-    await Certification.deleteMany();
-
-    await Project.insertMany(projects);
-    await Skill.insertMany(skills);
-    await Experience.insertMany(experiences);
-    await Research.insertMany(research);
-    await Certification.insertMany(certifications);
-
-    console.log('Data Seeded Successfully with Brand Colors!');
-    process.exit();
-  } catch (error) {
-    console.error('Error seeding data:', error);
-    process.exit(1);
-  }
-};
-
-seedDB();

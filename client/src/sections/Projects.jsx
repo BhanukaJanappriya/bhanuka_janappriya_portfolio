@@ -8,12 +8,12 @@ const Projects = () => {
   const { projects, loading } = useData();
   const [filter, setFilter] = useState('All');
 
-  const allTechs = ['All', ...new Set(projects.flatMap(p => p.technologies))];
+  const allTechs = ['All', ...new Set((projects || []).flatMap(p => p.technologies || []))];
   const topTechs = allTechs.slice(0, 8);
 
   const filteredProjects = filter === 'All' 
-    ? projects 
-    : projects.filter(p => p.technologies.includes(filter));
+    ? (projects || []) 
+    : (projects || []).filter(p => p.technologies && p.technologies.includes(filter));
 
   if (loading) return null;
 
@@ -51,10 +51,10 @@ const Projects = () => {
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
         >
-          <AnimatePresence mode='popLayout'>
+          <motion.div className="contents">
             {filteredProjects.map((project) => (
               <motion.div
-                key={project._id}
+                key={project._id || project.title}
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -65,13 +65,15 @@ const Projects = () => {
                 <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent-blue/20 via-black to-black p-12 flex items-center justify-center">
                   <Code size={80} className="text-accent-blue/10 group-hover:scale-110 group-hover:text-accent-blue/20 transition-all duration-700" />
                   
-                  <div className="absolute top-6 left-6 flex space-x-2">
-                     {project.technologies.slice(0, 2).map(tech => (
-                        <span key={tech} className="glass px-3 py-1 rounded-lg text-[9px] font-black text-white/50 uppercase tracking-tighter">
-                           {tech}
-                        </span>
-                     ))}
-                  </div>
+                  {project.technologies && project.technologies.length > 0 && (
+                    <div className="absolute top-6 left-6 flex space-x-2">
+                       {project.technologies.slice(0, 2).map(tech => (
+                          <span key={tech} className="glass px-3 py-1 rounded-lg text-[9px] font-black text-white/50 uppercase tracking-tighter">
+                             {tech}
+                          </span>
+                       ))}
+                    </div>
+                  )}
 
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center space-x-6">
                     {project.githubLink && (
@@ -95,26 +97,30 @@ const Projects = () => {
                     {project.description}
                   </p>
 
-                  <div className="space-y-3 mb-8">
-                    {project.features.slice(0, 3).map((feature, i) => (
-                      <div key={i} className="flex items-start text-xs text-white/70">
-                        <CheckCircle2 size={14} className="text-accent-blue mr-3 mt-0.5 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {project.features && project.features.length > 0 && (
+                    <div className="space-y-3 mb-8">
+                      {project.features.slice(0, 3).map((feature, i) => (
+                        <div key={i} className="flex items-start text-xs text-white/70">
+                          <CheckCircle2 size={14} className="text-accent-blue mr-3 mt-0.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   
-                  <div className="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-2">
-                    {project.technologies.map(tech => (
-                      <span key={tech} className="text-[9px] font-bold text-accent-gray bg-white/5 px-2 py-1 rounded-md">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  {project.technologies && project.technologies.length > 0 && (
+                    <div className="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-2">
+                      {project.technologies.map(tech => (
+                        <span key={tech} className="text-[9px] font-bold text-accent-gray bg-white/5 px-2 py-1 rounded-md">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
-          </AnimatePresence>
+          </motion.div>
         </motion.div>
       </div>
     </section>

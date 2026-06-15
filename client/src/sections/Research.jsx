@@ -56,7 +56,7 @@ const Research = () => {
                   </div>
                   
                   <div className="flex flex-wrap gap-2 lg:justify-end lg:max-w-[300px]">
-                    {item.technologies.map(tech => (
+                    {(item.technologies || []).map(tech => (
                       <span key={tech} className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-[11px] font-bold text-white/70 whitespace-nowrap">
                         {tech}
                       </span>
@@ -71,7 +71,7 @@ const Research = () => {
                        <span className="text-sm tracking-wide uppercase">Core Objectives</span>
                     </div>
                     <ul className="space-y-3">
-                      {item.objectives.map((obj, i) => (
+                      {(item.objectives || []).map((obj, i) => (
                         <li key={i} className="text-sm text-accent-gray flex items-start leading-relaxed">
                           <span className="w-1.5 h-1.5 bg-accent-blue/40 rounded-full mr-3 mt-1.5 flex-shrink-0" />
                           {obj}
@@ -86,7 +86,7 @@ const Research = () => {
                        <span className="text-sm tracking-wide uppercase">Domain Focus</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {item.focusAreas.map((area, i) => (
+                      {(item.focusAreas || []).map((area, i) => (
                         <div key={i} className="text-xs font-semibold px-4 py-2 bg-white/5 rounded-xl text-accent-gray border border-white/5">
                           {area}
                         </div>
