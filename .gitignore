@@ -7,10 +7,8 @@ build/
 
 # Large Assets (Ignored for git history size)
 client/src/assets/cv.png
-client/src/assets/myimg.png
 client/src/assets/myimg2.png
 client/src/assets/adobestock.mp4
 client/src/assets/pinterest.mp4
 client/public/cv.png
-client/public/myimg.png
 client/public/myimg2.png
