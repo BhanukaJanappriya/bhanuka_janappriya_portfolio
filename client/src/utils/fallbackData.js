@@ -92,10 +92,17 @@ export const fallbackSkills = [
   { name: 'MySQL', category: 'Databases', icon: 'SiMysql', color: '#4479A1' },
   
   // Tools & UI/UX
-  { name: 'Git', category: 'Version Control', icon: 'SiGit', color: '#F05032' },
+  { name: 'Git', category: 'Tools', icon: 'SiGit', color: '#F05032' },
   { name: 'Linux', category: 'Tools', icon: 'SiLinux', color: '#FCC624' },
   { name: 'Arduino', category: 'Tools', icon: 'SiArduino', color: '#00979D' },
+  { name: 'Docker', category: 'Tools', icon: 'SiDocker', color: '#2496ED' },
+  { name: 'Onshape', category: 'Tools', icon: 'SiOnshape', color: '#1B2C56' },
+  { name: 'CapCut', category: 'Tools', icon: 'SiCapcut', color: '#200626' },
+  { name: 'Microsoft Office', category: 'Tools', icon: 'SiMicrosoftoffice', color: '#D83B01' },
+  { name: 'Microsoft Excel', category: 'Tools', icon: 'SiMicrosoftexcel', color: '#107C41' },
+  { name: 'Microsoft PowerPoint', category: 'Tools', icon: 'SiMicrosoftpowerpoint', color: '#C43E1C' },
   { name: 'Figma', category: 'UI/UX', icon: 'SiFigma', color: '#F24E1E' },
+  { name: 'Canva', category: 'UI/UX', icon: 'SiCanva', color: '#00C4CC' },
   { name: 'Adobe Photoshop', category: 'UI/UX', icon: 'SiAdobephotoshop', color: '#31A8FF' },
   { name: 'Adobe Illustrator', category: 'UI/UX', icon: 'SiAdobeillustrator', color: '#FF9A00' }
 ];
