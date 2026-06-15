@@ -4,6 +4,7 @@ export const fallbackProjects = [
     description: 'Final year research project developing a framework to provide interpretable, symbolic explanations for complex probabilistic models. Focused on bridging the gap between high-performance "black-box" AI and human-understandable logic.',
     technologies: ['Python', 'Probabilistic Modeling', 'Symbolic Logic', 'Explainable AI'],
     features: ['Probabilistic explanations', 'Symbolic reasoning', 'Interpretability framework'],
+    image: 'project_prose.jpg',
     order: 1
   },
   {
@@ -17,6 +18,7 @@ export const fallbackProjects = [
       'Conversation memory and source citation'
     ],
     githubLink: 'https://github.com/BhanukaJanappriya',
+    image: 'project_chatbot.jpg',
     order: 2
   },
   {
@@ -29,6 +31,7 @@ export const fallbackProjects = [
       'Sequence labeling performance benchmarking'
     ],
     githubLink: 'https://github.com/BhanukaJanappriya',
+    image: 'project_ner.jpg',
     order: 3
   },
   {
@@ -36,6 +39,7 @@ export const fallbackProjects = [
     description: 'An intelligent Python-based agent engineered for financial data analysis and automated decision-making processes.',
     technologies: ['Python', 'AI Agents', 'Financial Analysis', 'Data Mining'],
     githubLink: 'https://github.com/BhanukaJanappriya',
+    image: 'project_finance.jpg',
     order: 4
   },
   {
@@ -47,6 +51,7 @@ export const fallbackProjects = [
       'Hardware-software integration',
       'Computer vision-based analysis'
     ],
+    image: 'project_turbidity.jpg',
     order: 5
   },
   {
@@ -54,6 +59,7 @@ export const fallbackProjects = [
     description: 'A machine learning initiative utilizing image processing to identify and categorize diseases in agricultural tea leaves, aiding in crop protection.',
     technologies: ['Python', 'Machine Learning', 'Computer Vision', 'Jupyter'],
     features: ['Image classification', 'Agricultural AI', 'Disease detection'],
+    image: 'project_tealeaf.jpg',
     order: 6
   }
 ];
@@ -92,10 +98,17 @@ export const fallbackSkills = [
   { name: 'MySQL', category: 'Databases', icon: 'SiMysql', color: '#4479A1' },
   
   // Tools & UI/UX
-  { name: 'Git', category: 'Version Control', icon: 'SiGit', color: '#F05032' },
+  { name: 'Git', category: 'Tools', icon: 'SiGit', color: '#F05032' },
   { name: 'Linux', category: 'Tools', icon: 'SiLinux', color: '#FCC624' },
   { name: 'Arduino', category: 'Tools', icon: 'SiArduino', color: '#00979D' },
+  { name: 'Docker', category: 'Tools', icon: 'SiDocker', color: '#2496ED' },
+  { name: 'Onshape', category: 'Tools', icon: 'SiOnshape', color: '#0A85EA' },
+  { name: 'CapCut', category: 'Tools', icon: 'SiCapcut', color: '#25F4EE' },
+  { name: 'Microsoft Office', category: 'Tools', icon: 'SiMicrosoftoffice', color: '#D83B01' },
+  { name: 'Microsoft Excel', category: 'Tools', icon: 'SiMicrosoftexcel', color: '#107C41' },
+  { name: 'Microsoft PowerPoint', category: 'Tools', icon: 'SiMicrosoftpowerpoint', color: '#C43E1C' },
   { name: 'Figma', category: 'UI/UX', icon: 'SiFigma', color: '#F24E1E' },
+  { name: 'Canva', category: 'UI/UX', icon: 'SiCanva', color: '#00C4CC' },
   { name: 'Adobe Photoshop', category: 'UI/UX', icon: 'SiAdobephotoshop', color: '#31A8FF' },
   { name: 'Adobe Illustrator', category: 'UI/UX', icon: 'SiAdobeillustrator', color: '#FF9A00' }
 ];

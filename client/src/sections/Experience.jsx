@@ -7,6 +7,12 @@ import {
   LayoutGrid, Clock
 } from 'lucide-react';
 
+import logoUop from '../assets/UOP.png';
+import logoCsup from '../assets/csup.jpg';
+import logoSired from '../assets/sired.jpg';
+import logoWelead from '../assets/welead.jpg';
+import logoDataex from '../assets/dataex.jpg';
+
 const Experience = () => {
   const { experience, loading } = useData();
   const [viewMode, setViewMode] = useState('grouped'); // 'grouped' or 'timeline'
@@ -29,17 +35,46 @@ const Experience = () => {
     return new Date(year, month, 1);
   };
 
-  // Helper to get company-specific icon
-  const getCompanyIcon = (companyName) => {
+
+
+  const getCompanyLogo = (companyName, sizeClass = "w-16 h-16") => {
     const name = companyName.toLowerCase();
-    if (name.includes('computer society') || name.includes('csup')) return <Users className="text-blue-400" size={24} />;
-    if (name.includes('sired') || name.includes('industrial relations')) return <Sparkles className="text-amber-400" size={24} />;
-    if (name.includes('we lead') || name.includes('career skills')) return <Award className="text-emerald-400" size={24} />;
-    if (name.includes('dataex') || name.includes('data science')) return <Code className="text-purple-400" size={24} />;
-    if (name.includes('university of peradeniya')) return <GraduationCap className="text-rose-400" size={24} />;
-    if (name.includes('adobe')) return <Palette className="text-pink-400" size={24} />;
-    if (name.includes('chess') || name.includes('sports')) return <Trophy className="text-yellow-400" size={24} />;
-    return <Briefcase className="text-accent-blue" size={24} />;
+    let imageSrc = null;
+    if (name.includes('computer society') || name.includes('csup')) {
+      imageSrc = logoCsup;
+    } else if (name.includes('sired') || name.includes('industrial relations')) {
+      imageSrc = logoSired;
+    } else if (name.includes('we lead') || name.includes('career skills')) {
+      imageSrc = logoWelead;
+    } else if (name.includes('dataex') || name.includes('data science')) {
+      imageSrc = logoDataex;
+    } else if (name.includes('university of peradeniya')) {
+      imageSrc = logoUop;
+    }
+
+    if (imageSrc) {
+      return (
+        <img 
+          src={imageSrc} 
+          alt={companyName} 
+          className={`${sizeClass} object-cover rounded-2xl border border-slate-200/60 dark:border-white/10 group-hover:border-accent-blue/30 transition-all duration-300 shadow-inner`} 
+        />
+      );
+    }
+
+    const iconSize = sizeClass.includes("w-10") ? 18 : 24;
+    return (
+      <div className={`${sizeClass} bg-slate-100 dark:bg-white/5 rounded-2xl flex items-center justify-center border border-slate-200/60 dark:border-white/10 group-hover:border-accent-blue/30 group-hover:bg-slate-200 dark:group-hover:bg-white/10 transition-all duration-300 shadow-inner`}>
+        {name.includes('computer society') || name.includes('csup') ? <Users className="text-blue-400" size={iconSize} /> :
+         name.includes('sired') || name.includes('industrial relations') ? <Sparkles className="text-amber-400" size={iconSize} /> :
+         name.includes('we lead') || name.includes('career skills') ? <Award className="text-emerald-400" size={iconSize} /> :
+         name.includes('dataex') || name.includes('data science') ? <Code className="text-purple-400" size={iconSize} /> :
+         name.includes('university of peradeniya') ? <GraduationCap className="text-rose-400" size={iconSize} /> :
+         name.includes('adobe') ? <Palette className="text-pink-400" size={iconSize} /> :
+         name.includes('chess') || name.includes('sports') ? <Trophy className="text-yellow-400" size={iconSize} /> :
+         <Briefcase className="text-accent-blue" size={iconSize} />}
+      </div>
+    );
   };
 
   // Helper to classify experiences for filtering
@@ -205,9 +240,7 @@ const Experience = () => {
                 {/* Company Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-200/50 dark:border-white/5 mb-8">
                   <div className="flex items-center space-x-5">
-                    <div className="w-16 h-16 bg-slate-100 dark:bg-white/5 rounded-2xl flex items-center justify-center border border-slate-200/60 dark:border-white/10 group-hover:border-accent-blue/30 group-hover:bg-slate-200 dark:group-hover:bg-white/10 transition-all duration-300 shadow-inner">
-                      {getCompanyIcon(companyGroup.company)}
-                    </div>
+                    {getCompanyLogo(companyGroup.company)}
                     <div>
                       <h3 className="text-xl md:text-2xl font-black text-slate-800 dark:text-white group-hover:text-accent-blue transition-colors duration-300">
                         {companyGroup.company}
@@ -346,18 +379,23 @@ const Experience = () => {
                       </div>
 
                       {/* Title & Company */}
-                      <h3 className="text-xl md:text-2xl font-black mb-1 text-slate-800 dark:text-white group-hover:text-accent-blue transition-colors duration-300 leading-snug">
+                      <h3 className="text-xl md:text-2xl font-black mb-3 text-slate-800 dark:text-white group-hover:text-accent-blue transition-colors duration-300 leading-snug">
                         {item.title}
                       </h3>
                       
-                      <div className="flex flex-wrap items-center text-slate-600 dark:text-accent-gray text-sm font-semibold mb-6 gap-x-4 gap-y-1.5">
-                        <span className="text-slate-800 dark:text-white font-bold">{item.company}</span>
-                        {item.location && (
-                          <span className="flex items-center text-slate-500 dark:text-accent-gray/80">
-                            <MapPin size={13} className="mr-1 text-slate-400 dark:text-white/30" />
-                            {item.location}
-                          </span>
-                        )}
+                      <div className="flex items-center space-x-3 mb-6">
+                        {getCompanyLogo(item.company, "w-10 h-10")}
+                        <div>
+                          <div className="text-slate-800 dark:text-white font-bold text-sm md:text-base leading-tight">
+                            {item.company}
+                          </div>
+                          {item.location && (
+                            <span className="flex items-center text-xs text-slate-500 dark:text-accent-gray/80 mt-0.5">
+                              <MapPin size={11} className="mr-1 text-slate-400 dark:text-white/30" />
+                              {item.location}
+                            </span>
+                          )}
+                        </div>
                       </div>
 
                       {/* Bullet descriptions */}
