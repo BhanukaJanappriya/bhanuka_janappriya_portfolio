@@ -41,9 +41,9 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: 30 }}
+          initial={{ opacity: 0, scale: 0.85, x: 30 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex justify-center items-center"
         >
           <div className="relative w-72 h-72 md:w-[450px] md:h-[450px]">
@@ -53,20 +53,32 @@ const Hero = () => {
             
             <div className="relative w-full h-full rounded-[3rem] overflow-hidden glass p-3 border-slate-200/50 dark:border-white/10 flex items-center justify-center">
               {!imgError ? (
-                <img 
+                <motion.img 
                   src="/myimg.png" 
                   alt="Bhanuka Janappriya" 
                   onError={() => setImgError(true)}
-                  className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 hover:scale-105"
+                  initial={{ scale: 1.25, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ 
+                    scale: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+                    opacity: { duration: 1 }
+                  }}
+                  className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer"
                 />
               ) : (
-                <div className="w-full h-full rounded-[2.2rem] bg-gradient-to-br from-accent-blue/10 via-slate-50 to-slate-100 dark:from-accent-blue/20 dark:via-dark-card dark:to-black flex flex-col items-center justify-center text-center p-6 border border-slate-200/50 dark:border-white/5">
+                <motion.div 
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="w-full h-full rounded-[2.2rem] bg-gradient-to-br from-accent-blue/10 via-slate-50 to-slate-100 dark:from-accent-blue/20 dark:via-dark-card dark:to-black flex flex-col items-center justify-center text-center p-6 border border-slate-200/50 dark:border-white/5"
+                >
                   <div className="w-24 h-24 rounded-full bg-accent-blue/10 border border-accent-blue/30 flex items-center justify-center mb-6 text-accent-blue shadow-[0_0_20px_rgba(0,113,227,0.2)]">
                     <span className="text-3xl font-black tracking-wider">BJ</span>
                   </div>
                   <h4 className="text-xl font-black text-slate-800 dark:text-white mb-1">Bhanuka Janappriya</h4>
                   <p className="text-sm text-slate-500 dark:text-accent-gray max-w-[240px]">Full-Stack Developer & Researcher</p>
-                </div>
+                </motion.div>
               )}
             </div>
 
