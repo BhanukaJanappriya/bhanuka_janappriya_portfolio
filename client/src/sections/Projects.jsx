@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useData } from '../context/DataContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ExternalLink, Code, CheckCircle2 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
@@ -127,22 +127,6 @@ const Projects = () => {
   );
 };
 
-// Helper for the arrow icon which was missing from imports
-const ArrowRight = ({ className, size }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-  </svg>
-);
+
 
 export default Projects;

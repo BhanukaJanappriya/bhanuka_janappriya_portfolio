@@ -1,10 +1,10 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useData } from '../context/DataContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Briefcase, Calendar, MapPin, Zap, GraduationCap, 
   Award, Sparkles, Code, Palette, Users, Trophy, 
-  LayoutGrid, Clock, ChevronRight, CheckCircle2 
+  LayoutGrid, Clock
 } from 'lucide-react';
 
 const Experience = () => {
@@ -45,7 +45,6 @@ const Experience = () => {
   // Helper to classify experiences for filtering
   const classifyExperience = (item) => {
     const title = item.title.toLowerCase();
-    const desc = (item.description || []).join(' ').toLowerCase();
     const skills = (item.skills || []).map(s => s.toLowerCase());
     const type = (item.type || '').toLowerCase();
 

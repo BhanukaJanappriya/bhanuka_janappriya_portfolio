@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, ArrowUp } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaPinterest } from 'react-icons/fa';
 

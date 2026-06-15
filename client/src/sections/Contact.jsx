@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, MapPin, Loader2 } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaPinterest } from 'react-icons/fa';
@@ -25,7 +25,7 @@ const Contact = () => {
       await sendMessage(formData);
       setStatus({ type: 'success', message: 'Message sent! I will get back to you soon.' });
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
+    } catch {
       setStatus({ type: 'error', message: 'Oops! Something went wrong. Please try again.' });
     } finally {
       setLoading(false);

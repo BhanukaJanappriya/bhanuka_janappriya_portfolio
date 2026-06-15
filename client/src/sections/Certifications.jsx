@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useData } from '../context/DataContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Award, ExternalLink, ChevronDown, ChevronUp, GraduationCap, ShieldAlert, Cpu, Terminal, Compass } from 'lucide-react';

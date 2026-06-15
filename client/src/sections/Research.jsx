@@ -1,7 +1,6 @@
-import React from 'react';
 import { useData } from '../context/DataContext';
 import { motion } from 'framer-motion';
-import { Beaker, Target, Cpu, BookOpen, Layers } from 'lucide-react';
+import { Target, Cpu, BookOpen, Layers } from 'lucide-react';
 
 const Research = () => {
   const { research, loading } = useData();
