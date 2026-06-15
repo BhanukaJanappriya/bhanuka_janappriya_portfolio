@@ -10,6 +10,12 @@ import projectNer from '../assets/project_ner.jpg';
 import projectFinance from '../assets/project_finance.jpg';
 import projectTurbidity from '../assets/project_turbidity.jpg';
 import projectTealeaf from '../assets/project_tealeaf.jpg';
+import projectWatertank from '../assets/project_watertank.jpg';
+import projectSoulcare from '../assets/project_soulcare.jpg';
+import projectCalendar from '../assets/project_calendar.jpg';
+import projectSkinchroma from '../assets/project_skinchroma.jpg';
+import projectDesert from '../assets/project_desert.jpg';
+import projectPdfenhancer from '../assets/project_pdfenhancer.jpg';
 
 const projectImages = {
   'project_prose.jpg': projectProse,
@@ -18,6 +24,12 @@ const projectImages = {
   'project_finance.jpg': projectFinance,
   'project_turbidity.jpg': projectTurbidity,
   'project_tealeaf.jpg': projectTealeaf,
+  'project_watertank.jpg': projectWatertank,
+  'project_soulcare.jpg': projectSoulcare,
+  'project_calendar.jpg': projectCalendar,
+  'project_skinchroma.jpg': projectSkinchroma,
+  'project_desert.jpg': projectDesert,
+  'project_pdfenhancer.jpg': projectPdfenhancer,
 };
 
 const Projects = () => {
