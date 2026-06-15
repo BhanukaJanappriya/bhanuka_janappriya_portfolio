@@ -7,8 +7,7 @@ import {
   SiMongodb, SiMysql, SiGit, SiLinux, SiArduino, SiFigma, SiCss
 } from 'react-icons/si';
 import { FaJava, FaCode } from 'react-icons/fa';
-import { DiCss3 } from 'react-icons/di';
-import { TbBrandAdobePhotoshop, TbBrandAdobeIllustrator } from 'react-icons/tb';
+import { DiCss3, DiPhotoshop, DiIllustrator } from 'react-icons/di';
 
 const iconMap = {
   SiPython,
@@ -37,8 +36,8 @@ const iconMap = {
   SiLinux,
   SiArduino,
   SiFigma,
-  SiAdobephotoshop: TbBrandAdobePhotoshop,
-  SiAdobeillustrator: TbBrandAdobeIllustrator
+  SiAdobephotoshop: DiPhotoshop,
+  SiAdobeillustrator: DiIllustrator
 };
 
 const Skills = () => {
@@ -55,7 +54,11 @@ const Skills = () => {
   ];
 
   const getIcon = (iconName, color) => {
-    const IconComponent = iconMap[iconName] || FaCode;
+    // Case-insensitive key lookup to prevent DB capitalization mismatches
+    const matchedKey = Object.keys(iconMap).find(
+      key => key.toLowerCase() === iconName.toLowerCase()
+    );
+    const IconComponent = matchedKey ? iconMap[matchedKey] : FaCode;
     return <IconComponent size={28} style={{ color: color || 'currentColor' }} />;
   };
 
