@@ -10,6 +10,8 @@ import {
 import logoUop from '../assets/UOP.png';
 import logoCsup from '../assets/logo1.png';
 import logoSired from '../assets/sired.jpg';
+import logoWelead from '../assets/welead.jpg';
+import logoDataex from '../assets/dataex.jpg';
 
 const Experience = () => {
   const { experience, loading } = useData();
@@ -44,6 +46,10 @@ const Experience = () => {
       imageSrc = logoSired;
     } else if (name.includes('university of peradeniya')) {
       imageSrc = logoUop;
+    } else if (name.includes('we lead') || name.includes('career skills')) {
+      imageSrc = logoWelead;
+    } else if (name.includes('dataex') || name.includes('data science')) {
+      imageSrc = logoDataex;
     }
 
     if (imageSrc) {
