@@ -18,7 +18,7 @@ const Projects = () => {
   if (loading) return null;
 
   return (
-    <section id="projects" className="section-padding bg-dark-soft">
+    <section id="projects" className="section-padding bg-slate-50/50 dark:bg-dark-soft">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Portfolio Showcase</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">Portfolio Showcase</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full mb-8" />
           
           <div className="flex flex-wrap justify-center gap-3">
@@ -60,9 +60,9 @@ const Projects = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
-                className="glass rounded-[2.5rem] overflow-hidden flex flex-col group border-white/5 hover:border-accent-blue/20 transition-all duration-500"
+                className="glass rounded-[2.5rem] overflow-hidden flex flex-col group border-slate-200/50 dark:border-white/5 hover:border-accent-blue/20 transition-all duration-500 shadow-sm hover:shadow-xl"
               >
-                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent-blue/20 via-black to-black p-12 flex items-center justify-center">
+                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent-blue/10 via-slate-100 to-slate-200 dark:from-accent-blue/20 dark:via-black dark:to-black p-12 flex items-center justify-center">
                   <Code size={80} className="text-accent-blue/10 group-hover:scale-110 group-hover:text-accent-blue/20 transition-all duration-700" />
                   
                   {project.technologies && project.technologies.length > 0 && (
@@ -90,17 +90,17 @@ const Projects = () => {
                 </div>
 
                 <div className="p-10 flex-grow flex flex-col">
-                  <h3 className="text-2xl font-black mb-4 group-hover:text-accent-blue transition-colors">
+                  <h3 className="text-2xl font-black mb-4 text-slate-800 dark:text-white group-hover:text-accent-blue transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-accent-gray text-sm leading-relaxed mb-8">
+                  <p className="text-slate-600 dark:text-accent-gray text-sm leading-relaxed mb-8">
                     {project.description}
                   </p>
 
                   {project.features && project.features.length > 0 && (
                     <div className="space-y-3 mb-8">
                       {project.features.slice(0, 3).map((feature, i) => (
-                        <div key={i} className="flex items-start text-xs text-white/70">
+                        <div key={i} className="flex items-start text-xs text-slate-600 dark:text-white/70">
                           <CheckCircle2 size={14} className="text-accent-blue mr-3 mt-0.5 flex-shrink-0" />
                           <span>{feature}</span>
                         </div>
@@ -109,9 +109,9 @@ const Projects = () => {
                   )}
                   
                   {project.technologies && project.technologies.length > 0 && (
-                    <div className="mt-auto pt-6 border-t border-white/5 flex flex-wrap gap-2">
+                    <div className="mt-auto pt-6 border-t border-slate-200 dark:border-white/5 flex flex-wrap gap-2">
                       {project.technologies.map(tech => (
-                        <span key={tech} className="text-[9px] font-bold text-accent-gray bg-white/5 px-2 py-1 rounded-md">
+                        <span key={tech} className="text-[9px] font-bold text-slate-500 dark:text-accent-gray bg-slate-100 dark:bg-white/5 px-2 py-1 rounded-md">
                           {tech}
                         </span>
                       ))}

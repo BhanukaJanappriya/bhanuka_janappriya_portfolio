@@ -123,7 +123,7 @@ const Experience = () => {
   if (loading || !experience || experience.length === 0) return null;
 
   return (
-    <section id="experience" className="section-padding bg-black relative overflow-hidden">
+    <section id="experience" className="section-padding bg-gradient-to-b from-slate-50 via-slate-100/70 to-slate-50 dark:from-black dark:via-dark-soft dark:to-black relative overflow-hidden transition-colors duration-300">
       {/* Decorative radial gradients for premium feel */}
       <div className="absolute top-1/4 left-1/10 w-96 h-96 bg-accent-blue/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-purple-600/5 rounded-full blur-[120px] pointer-events-none" />
@@ -138,19 +138,19 @@ const Experience = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4 bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-4 bg-gradient-to-r from-slate-950 via-slate-800 to-slate-600 dark:from-white dark:via-white dark:to-white/40 bg-clip-text text-transparent">
             University & Professional Experience
           </h2>
-          <p className="text-accent-gray max-w-2xl mx-auto text-base md:text-lg mb-8 leading-relaxed font-medium">
+          <p className="text-slate-600 dark:text-accent-gray max-w-2xl mx-auto text-base md:text-lg mb-8 leading-relaxed font-medium">
             A comprehensive look at my leadership roles, technical development, and creative contributions during my academic journey.
           </p>
 
           {/* View Toggle */}
-          <div className="inline-flex p-1.5 bg-dark-card/60 backdrop-blur-xl border border-white/5 rounded-2xl relative shadow-2xl">
+          <div className="inline-flex p-1.5 bg-slate-100/80 dark:bg-dark-card/60 backdrop-blur-xl border border-slate-200/50 dark:border-white/5 rounded-2xl relative shadow-2xl">
             <button
               onClick={() => setViewMode('grouped')}
               className={`flex items-center space-x-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all relative z-10 ${
-                viewMode === 'grouped' ? 'text-white' : 'text-accent-gray hover:text-white'
+                viewMode === 'grouped' ? 'text-white' : 'text-slate-500 dark:text-accent-gray hover:text-slate-800 dark:hover:text-white'
               }`}
             >
               <LayoutGrid size={16} />
@@ -166,7 +166,7 @@ const Experience = () => {
             <button
               onClick={() => setViewMode('timeline')}
               className={`flex items-center space-x-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all relative z-10 ${
-                viewMode === 'timeline' ? 'text-white' : 'text-accent-gray hover:text-white'
+                viewMode === 'timeline' ? 'text-white' : 'text-slate-500 dark:text-accent-gray hover:text-slate-800 dark:hover:text-white'
               }`}
             >
               <Clock size={16} />
@@ -198,29 +198,29 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: Math.min(index * 0.1, 0.4) }}
-                className="glass p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden group hover:border-white/15 transition-all duration-300"
+                className="glass p-8 md:p-12 rounded-[2.5rem] relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/15 transition-all duration-300 shadow-sm hover:shadow-xl"
               >
                 {/* Subtle gradient glow in card corner */}
-                <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/2 rounded-full blur-2xl group-hover:bg-accent-blue/5 transition-all duration-500" />
+                <div className="absolute -top-12 -right-12 w-48 h-48 bg-slate-950/2 dark:bg-white/2 rounded-full blur-2xl group-hover:bg-accent-blue/5 transition-all duration-500" />
 
                 {/* Company Header */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-white/5 mb-8">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-slate-200/50 dark:border-white/5 mb-8">
                   <div className="flex items-center space-x-5">
-                    <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 group-hover:border-accent-blue/30 group-hover:bg-white/10 transition-all duration-300 shadow-inner">
+                    <div className="w-16 h-16 bg-slate-100 dark:bg-white/5 rounded-2xl flex items-center justify-center border border-slate-200/60 dark:border-white/10 group-hover:border-accent-blue/30 group-hover:bg-slate-200 dark:group-hover:bg-white/10 transition-all duration-300 shadow-inner">
                       {getCompanyIcon(companyGroup.company)}
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-black group-hover:text-accent-blue transition-colors duration-300">
+                      <h3 className="text-xl md:text-2xl font-black text-slate-800 dark:text-white group-hover:text-accent-blue transition-colors duration-300">
                         {companyGroup.company}
                       </h3>
-                      <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-accent-gray text-sm font-semibold">
+                      <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-slate-500 dark:text-accent-gray text-sm font-semibold">
                         {companyGroup.roles[0].location && (
                           <span className="flex items-center">
-                            <MapPin size={14} className="mr-1 text-white/40" />
+                            <MapPin size={14} className="mr-1 text-slate-400 dark:text-white/40" />
                             {companyGroup.roles[0].location}
                           </span>
                         )}
-                        <span className="text-white/20">•</span>
+                        <span className="text-slate-300 dark:text-white/20">•</span>
                         <span className="text-accent-blue/90 uppercase tracking-widest text-xs font-black">
                           {companyGroup.roles[0].type}
                         </span>
@@ -228,7 +228,7 @@ const Experience = () => {
                     </div>
                   </div>
 
-                  <div className="text-accent-gray text-xs md:text-sm font-black uppercase tracking-widest bg-white/5 px-4 py-2 rounded-xl border border-white/5 self-start md:self-auto">
+                  <div className="text-slate-600 dark:text-accent-gray text-xs md:text-sm font-black uppercase tracking-widest bg-slate-100 dark:bg-white/5 px-4 py-2 rounded-xl border border-slate-200/50 dark:border-white/5 self-start md:self-auto">
                     {companyGroup.roles[companyGroup.roles.length - 1].startDate} — {companyGroup.roles[0].endDate}
                   </div>
                 </div>
@@ -237,20 +237,20 @@ const Experience = () => {
                 <div className="relative pl-6 md:pl-10 space-y-12">
                   {/* Internal vertical line linking roles */}
                   {companyGroup.roles.length > 1 && (
-                    <div className="absolute left-2.5 md:left-4.5 top-3 bottom-3 w-[2px] bg-gradient-to-b from-accent-blue/40 via-white/5 to-white/5" />
+                    <div className="absolute left-2.5 md:left-4.5 top-3 bottom-3 w-[2px] bg-gradient-to-b from-accent-blue/40 via-slate-200 dark:via-white/5 to-slate-200 dark:to-white/5" />
                   )}
 
                   {companyGroup.roles.map((role, rIndex) => (
                     <div key={role._id || rIndex} className="relative">
                       {/* Timeline Node dot */}
-                      <div className="absolute -left-[29px] md:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-black border-2 border-accent-blue group-hover:border-white transition-all shadow-[0_0_10px_rgba(0,113,227,0.5)] z-10" />
+                      <div className="absolute -left-[29px] md:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-slate-50 dark:bg-black border-2 border-accent-blue group-hover:border-slate-800 dark:group-hover:border-white transition-all shadow-[0_0_10px_rgba(0,113,227,0.5)] z-10" />
                       
                       <div className="flex flex-col md:flex-row md:items-start gap-4 justify-between mb-4">
                         <div>
-                          <h4 className="text-lg md:text-xl font-bold text-white tracking-wide">
+                          <h4 className="text-lg md:text-xl font-bold text-slate-800 dark:text-white tracking-wide">
                             {role.title}
                           </h4>
-                          <div className="flex items-center space-x-2 text-xs md:text-sm text-accent-gray font-semibold mt-0.5">
+                          <div className="flex items-center space-x-2 text-xs md:text-sm text-slate-500 dark:text-accent-gray font-semibold mt-0.5">
                             <Calendar size={13} className="opacity-60" />
                             <span>{role.startDate} — {role.endDate}</span>
                           </div>
@@ -260,7 +260,7 @@ const Experience = () => {
                       {/* Role Descriptions */}
                       <div className="space-y-3 mb-5 max-w-4xl">
                         {role.description.map((desc, dIndex) => (
-                          <div key={dIndex} className="flex items-start text-sm md:text-base text-accent-gray leading-relaxed font-medium">
+                          <div key={dIndex} className="flex items-start text-sm md:text-base text-slate-600 dark:text-accent-gray leading-relaxed font-medium">
                             <Zap size={14} className="text-accent-blue mr-3 mt-1.5 flex-shrink-0 opacity-60" />
                             <p className="flex-1">{desc}</p>
                           </div>
@@ -273,7 +273,7 @@ const Experience = () => {
                           {role.skills.map((skill, sIndex) => (
                             <span 
                               key={sIndex} 
-                              className="text-xs font-bold px-3 py-1.5 bg-white/5 hover:bg-accent-blue/10 border border-white/5 hover:border-accent-blue/30 text-accent-gray hover:text-white rounded-lg transition-all duration-200"
+                              className="text-xs font-bold px-3 py-1.5 bg-slate-100 hover:bg-accent-blue/10 border border-slate-200 hover:border-accent-blue/30 text-slate-600 dark:bg-white/5 dark:border-white/5 dark:text-accent-gray dark:hover:text-white rounded-lg transition-all duration-200 hover:text-accent-blue dark:hover:text-white"
                             >
                               {skill}
                             </span>
@@ -304,8 +304,8 @@ const Experience = () => {
                   onClick={() => setTimelineFilter(filter)}
                   className={`text-xs md:text-sm font-semibold capitalize px-5 py-2.5 rounded-full border transition-all duration-300 ${
                     timelineFilter === filter
-                      ? 'bg-white text-black border-white shadow-xl scale-105'
-                      : 'bg-dark-card/50 text-accent-gray border-white/5 hover:border-white/20 hover:text-white'
+                      ? 'bg-accent-blue text-white border-accent-blue shadow-xl scale-105'
+                      : 'bg-slate-100 dark:bg-dark-card/50 text-slate-600 dark:text-accent-gray border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/20 hover:text-slate-800 dark:hover:text-white'
                   }`}
                 >
                   {filter === 'all' ? 'All Roles' : filter === 'tech' ? 'Technical & Web' : filter}
@@ -314,7 +314,7 @@ const Experience = () => {
             </div>
 
             {/* Timeline Wrapper */}
-            <div className="relative border-l border-white/10 ml-4 md:ml-6 pl-8 md:pl-12 space-y-12">
+            <div className="relative border-l border-slate-200 dark:border-white/10 ml-4 md:ml-6 pl-8 md:pl-12 space-y-12">
               <AnimatePresence mode="popLayout">
                 {filteredTimelineExperiences.map((item, index) => (
                   <motion.div
@@ -327,12 +327,12 @@ const Experience = () => {
                     className="relative group"
                   >
                     {/* Glowing Timeline Marker */}
-                    <div className="absolute -left-[41px] md:-left-[57px] top-1.5 w-5 h-5 rounded-full bg-black border-2 border-accent-blue group-hover:bg-accent-blue group-hover:scale-125 transition-all duration-300 shadow-[0_0_15px_rgba(0,113,227,0.4)] z-10 flex items-center justify-center">
+                    <div className="absolute -left-[41px] md:-left-[57px] top-1.5 w-5 h-5 rounded-full bg-slate-50 dark:bg-black border-2 border-accent-blue group-hover:bg-accent-blue group-hover:scale-125 transition-all duration-300 shadow-[0_0_15px_rgba(0,113,227,0.4)] z-10 flex items-center justify-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
 
                     {/* Card container */}
-                    <div className="glass p-8 rounded-[2rem] hover:border-accent-blue/30 transition-all duration-300">
+                    <div className="glass p-8 rounded-[2rem] hover:border-accent-blue/30 transition-all duration-300 shadow-sm hover:shadow-xl">
                       
                       {/* Meta information row */}
                       <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
@@ -341,21 +341,21 @@ const Experience = () => {
                           <span>{item.startDate} — {item.endDate}</span>
                         </div>
                         
-                        <span className="text-[10px] font-black uppercase tracking-wider bg-white/5 border border-white/5 text-accent-gray px-3 py-1 rounded-md">
+                        <span className="text-[10px] font-black uppercase tracking-wider bg-slate-100 dark:bg-white/5 border border-slate-200/50 dark:border-white/5 text-slate-500 dark:text-accent-gray px-3 py-1 rounded-md">
                           {item.type}
                         </span>
                       </div>
 
                       {/* Title & Company */}
-                      <h3 className="text-xl md:text-2xl font-black mb-1 group-hover:text-accent-blue transition-colors duration-300 leading-snug">
+                      <h3 className="text-xl md:text-2xl font-black mb-1 text-slate-800 dark:text-white group-hover:text-accent-blue transition-colors duration-300 leading-snug">
                         {item.title}
                       </h3>
                       
-                      <div className="flex flex-wrap items-center text-accent-gray text-sm font-semibold mb-6 gap-x-4 gap-y-1.5">
-                        <span className="text-white font-bold">{item.company}</span>
+                      <div className="flex flex-wrap items-center text-slate-600 dark:text-accent-gray text-sm font-semibold mb-6 gap-x-4 gap-y-1.5">
+                        <span className="text-slate-800 dark:text-white font-bold">{item.company}</span>
                         {item.location && (
-                          <span className="flex items-center text-accent-gray/80">
-                            <MapPin size={13} className="mr-1 text-white/30" />
+                          <span className="flex items-center text-slate-500 dark:text-accent-gray/80">
+                            <MapPin size={13} className="mr-1 text-slate-400 dark:text-white/30" />
                             {item.location}
                           </span>
                         )}
@@ -364,7 +364,7 @@ const Experience = () => {
                       {/* Bullet descriptions */}
                       <div className="space-y-3 mb-6">
                         {item.description.map((desc, dIndex) => (
-                          <div key={dIndex} className="flex items-start text-sm md:text-base text-accent-gray leading-relaxed font-medium">
+                          <div key={dIndex} className="flex items-start text-sm md:text-base text-slate-600 dark:text-accent-gray leading-relaxed font-medium">
                             <Zap size={14} className="text-accent-blue mr-3 mt-1.5 flex-shrink-0 opacity-60" />
                             <p className="flex-1">{desc}</p>
                           </div>
@@ -373,11 +373,11 @@ const Experience = () => {
 
                       {/* Skills tags */}
                       {item.skills && item.skills.length > 0 && (
-                        <div className="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+                        <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-200/50 dark:border-white/5">
                           {item.skills.map((skill, sIndex) => (
                             <span 
                               key={sIndex} 
-                              className="text-xs font-bold px-3 py-1.5 bg-white/5 hover:bg-accent-blue/10 border border-white/5 hover:border-accent-blue/30 text-accent-gray hover:text-white rounded-lg transition-all duration-200"
+                              className="text-xs font-bold px-3 py-1.5 bg-slate-100 hover:bg-accent-blue/10 border border-slate-200 hover:border-accent-blue/30 text-slate-600 dark:bg-white/5 dark:border-white/5 dark:text-accent-gray dark:hover:text-white rounded-lg transition-all duration-200"
                             >
                               {skill}
                             </span>
@@ -390,7 +390,7 @@ const Experience = () => {
               </AnimatePresence>
 
               {filteredTimelineExperiences.length === 0 && (
-                <div className="text-center py-12 text-accent-gray font-semibold">
+                <div className="text-center py-12 text-slate-500 dark:text-accent-gray font-semibold">
                   No experiences match this filter.
                 </div>
               )}

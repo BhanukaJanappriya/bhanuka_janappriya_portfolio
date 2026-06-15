@@ -8,7 +8,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white dark:bg-dark border-t border-white/10 py-12 px-6 md:px-12 lg:px-24">
+    <footer className="bg-white dark:bg-dark border-t border-slate-200 dark:border-white/10 py-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
           <div className="mb-6 md:mb-0">
@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-slate-200 dark:border-white/5">
           <p className="text-sm text-accent-gray mb-4 md:mb-0">
             © {new Date().getFullYear()} Bhanuka Janappriya. All rights reserved.
           </p>

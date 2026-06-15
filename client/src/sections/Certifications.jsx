@@ -67,7 +67,7 @@ const Certifications = () => {
   if (loading || !certifications || certifications.length === 0) return null;
 
   return (
-    <section id="certifications" className="section-padding bg-dark-soft relative overflow-hidden">
+    <section id="certifications" className="section-padding bg-gradient-to-b from-slate-100/50 via-slate-100 to-slate-50 dark:from-dark-soft dark:via-dark dark:to-dark-soft relative overflow-hidden transition-colors duration-300">
       {/* Decorative background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-blue/5 rounded-full blur-[140px] pointer-events-none" />
 
@@ -81,7 +81,7 @@ const Certifications = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-4">Certifications & Achievements</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-slate-900 dark:text-white">Certifications & Achievements</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full mb-8" />
           
           {/* Category Tabs */}
@@ -101,7 +101,7 @@ const Certifications = () => {
                 className={`text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl border transition-all duration-300 ${
                   filter === tab.id
                     ? 'bg-accent-blue border-accent-blue text-white shadow-lg shadow-accent-blue/25 scale-105'
-                    : 'glass text-accent-gray border-white/5 hover:border-white/15 hover:text-white'
+                    : 'glass text-slate-600 border-slate-200/50 hover:border-slate-300 hover:text-slate-800 dark:text-accent-gray dark:border-white/5 dark:hover:border-white/15 dark:hover:text-white'
                 }`}
               >
                 {tab.label}
@@ -124,7 +124,7 @@ const Certifications = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: Math.min(index * 0.05, 0.3) }}
-                className="glass p-6 md:p-8 rounded-3xl flex flex-col justify-between hover:border-accent-blue/30 group transition-all duration-300 relative overflow-hidden"
+                className="glass p-6 md:p-8 rounded-3xl flex flex-col justify-between hover:border-accent-blue/30 group transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-xl"
               >
                 {/* Micro-gradient glow on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -132,19 +132,19 @@ const Certifications = () => {
                 <div>
                   {/* Card Header (Icon & Date) */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-accent-blue/30 group-hover:bg-white/10 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200/50 dark:bg-white/5 dark:border-white/10 flex items-center justify-center group-hover:border-accent-blue/30 group-hover:bg-slate-200 dark:group-hover:bg-white/10 transition-all duration-300">
                       {getCertIcon(cert.issuer, cert.title)}
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-wider bg-white/5 border border-white/5 text-accent-gray px-3 py-1.5 rounded-lg">
+                    <span className="text-[10px] font-black uppercase tracking-wider bg-slate-100 dark:bg-white/5 border border-slate-200/50 dark:border-white/5 text-slate-600 dark:text-accent-gray px-3 py-1.5 rounded-lg">
                       {cert.date}
                     </span>
                   </div>
 
                   {/* Title & Issuer */}
-                  <h4 className="font-bold text-lg md:text-xl text-white mb-2 leading-snug group-hover:text-accent-blue transition-colors duration-300">
+                  <h4 className="font-bold text-lg md:text-xl text-slate-800 dark:text-white mb-2 leading-snug group-hover:text-accent-blue transition-colors duration-300">
                     {cert.title}
                   </h4>
-                  <p className="text-accent-gray text-sm font-semibold mb-6 flex items-center">
+                  <p className="text-slate-500 dark:text-accent-gray text-sm font-semibold mb-6 flex items-center">
                     <Compass size={14} className="mr-1.5 opacity-40" />
                     {cert.issuer}
                   </p>
@@ -153,11 +153,11 @@ const Certifications = () => {
                 <div>
                   {/* Skill Badges */}
                   {cert.skills && cert.skills.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5 mb-6 pt-4 border-t border-white/5">
+                    <div className="flex flex-wrap gap-1.5 mb-6 pt-4 border-t border-slate-200/50 dark:border-white/5">
                       {cert.skills.map((skill, sIndex) => (
                         <span 
                           key={sIndex} 
-                          className="text-[9px] font-bold tracking-tight px-2 py-1 bg-white/5 text-accent-gray group-hover:text-white rounded-md border border-white/5 transition-colors"
+                          className="text-[9px] font-bold tracking-tight px-2 py-1 bg-slate-100 hover:bg-accent-blue/10 border border-slate-200 dark:bg-white/5 dark:border-white/5 text-slate-500 hover:text-slate-800 dark:text-accent-gray dark:group-hover:text-white rounded-md transition-colors"
                         >
                           {skill}
                         </span>
@@ -171,7 +171,7 @@ const Certifications = () => {
                       href={cert.link} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 text-accent-blue text-xs font-black uppercase tracking-wider hover:text-white transition-colors group/link"
+                      className="inline-flex items-center space-x-2 text-accent-blue text-xs font-black uppercase tracking-wider hover:text-slate-900 dark:hover:text-white transition-colors group/link"
                     >
                       <span>Verify Credential</span>
                       <ExternalLink size={13} className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
@@ -185,7 +185,7 @@ const Certifications = () => {
 
         {/* Empty state */}
         {filteredCertifications.length === 0 && (
-          <div className="text-center py-12 text-accent-gray font-semibold">
+          <div className="text-center py-12 text-slate-500 dark:text-accent-gray font-semibold">
             No certifications match this filter.
           </div>
         )}
@@ -198,7 +198,7 @@ const Certifications = () => {
           >
             <button
               onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full border border-white/10 hover:border-accent-blue hover:text-white font-bold text-sm transition-all duration-300 relative overflow-hidden group/btn"
+              className="inline-flex items-center space-x-2 px-6 py-3 rounded-full border border-slate-200 hover:border-accent-blue dark:border-white/10 dark:hover:border-accent-blue dark:hover:text-white text-slate-700 dark:text-accent-gray font-bold text-sm transition-all duration-300 relative overflow-hidden group/btn"
             >
               <span>{showAll ? 'Show Less' : `View All ${filteredCertifications.length} Certifications`}</span>
               {showAll ? <ChevronUp size={16} /> : <ChevronDown size={16} />}

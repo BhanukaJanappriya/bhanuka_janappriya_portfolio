@@ -1,7 +1,46 @@
 import React from 'react';
 import { useData } from '../context/DataContext';
 import { motion } from 'framer-motion';
-import * as SiIcons from 'react-icons/si';
+import { 
+  SiPython, SiJavascript, SiTypescript, SiC, SiCplusplus, SiPostgresql,
+  SiReact, SiTailwindcss, SiHtml5, SiNodedotjs, SiExpress,
+  SiDjango, SiFastapi, SiLangchain, SiPytorch, SiOpencv, SiHuggingface,
+  SiMongodb, SiMysql, SiGit, SiLinux, SiArduino, SiFigma, SiCss
+} from 'react-icons/si';
+import { FaJava, FaCode } from 'react-icons/fa';
+import { DiCss3 } from 'react-icons/di';
+import { TbBrandAdobePhotoshop, TbBrandAdobeIllustrator } from 'react-icons/tb';
+
+const iconMap = {
+  SiPython,
+  SiJava: FaJava,
+  SiJavascript,
+  SiTypescript,
+  SiC,
+  SiCplusplus,
+  SiPostgresql,
+  SiReact,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3: DiCss3,
+  SiCss: SiCss,
+  SiNodedotjs,
+  SiExpress,
+  SiDjango,
+  SiFastapi,
+  SiLangchain,
+  SiPytorch,
+  SiOpencv,
+  SiHuggingface,
+  SiMongodb,
+  SiMysql,
+  SiGit,
+  SiLinux,
+  SiArduino,
+  SiFigma,
+  SiAdobephotoshop: TbBrandAdobePhotoshop,
+  SiAdobeillustrator: TbBrandAdobeIllustrator
+};
 
 const Skills = () => {
   const { skills, loading } = useData();
@@ -17,8 +56,8 @@ const Skills = () => {
   ];
 
   const getIcon = (iconName, color) => {
-    const IconComponent = SiIcons[iconName];
-    return IconComponent ? <IconComponent size={28} style={{ color: color || 'currentColor' }} /> : null;
+    const IconComponent = iconMap[iconName] || FaCode;
+    return <IconComponent size={28} style={{ color: color || 'currentColor' }} />;
   };
 
   if (loading) return null;
@@ -33,7 +72,7 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Technical Arsenal</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">Technical Arsenal</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full" />
         </motion.div>
 
@@ -48,7 +87,7 @@ const Skills = () => {
                    <h3 className="text-sm font-black uppercase tracking-[0.2em] text-accent-blue">
                      {category}
                    </h3>
-                   <div className="h-[1px] flex-grow bg-white/5" />
+                   <div className="h-[1px] flex-grow bg-slate-200 dark:bg-white/5" />
                 </div>
                 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
@@ -64,14 +103,14 @@ const Skills = () => {
                       }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className="glass px-4 py-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4 group border-white/5 transition-all duration-300"
+                      className="glass px-4 py-8 rounded-2xl flex flex-col items-center justify-center text-center space-y-4 group border-slate-200/50 dark:border-white/5 transition-all duration-300 shadow-sm hover:shadow-lg"
                     >
                       <div 
                         className="transition-all duration-500 group-hover:scale-125 filter group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
                       >
                         {getIcon(skill.icon, skill.color)}
                       </div>
-                      <span className="text-[10px] font-black uppercase tracking-wider text-white/60 group-hover:text-white transition-colors">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-white/60 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                         {skill.name}
                       </span>
                     </motion.div>
