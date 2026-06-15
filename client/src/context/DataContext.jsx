@@ -31,8 +31,19 @@ export const DataProvider = ({ children }) => {
         setCertifications(certRes.data);
         setError(null);
       } catch (err) {
-        console.error('Error fetching data:', err);
-        setError('Failed to load portfolio data. Please try again later.');
+        console.warn('API connection failed. Falling back to local static dataset.', err);
+        try {
+          const fallback = await import('../utils/fallbackData');
+          setProjects(fallback.fallbackProjects);
+          setSkills(fallback.fallbackSkills);
+          setExperience(fallback.fallbackExperience);
+          setResearch(fallback.fallbackResearch);
+          setCertifications(fallback.fallbackCertifications);
+          setError(null);
+        } catch (fallbackErr) {
+          console.error('Fallback load failed:', fallbackErr);
+          setError('Failed to load portfolio data. Please try again later.');
+        }
       } finally {
         setLoading(false);
       }

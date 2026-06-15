@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
-import myImg from '../assets/myimg.png';
+import myImg from '../assets/myimg2.png';
 
 const Hero = () => {
   return (

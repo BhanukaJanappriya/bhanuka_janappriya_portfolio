@@ -7,6 +7,7 @@ const experienceSchema = new mongoose.Schema({
   startDate: { type: String, required: true },
   endDate: { type: String, default: 'Present' },
   description: [String],
+  skills: [String],
   type: { 
     type: String, 
     enum: ['Internship', 'Full-time', 'Volunteer', 'Freelance', 'Technical Position', 'Society Involvement']
