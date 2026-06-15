@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const [imgError, setImgError] = useState(false);
@@ -21,11 +21,11 @@ const Hero = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-accent-blue/10 text-accent-blue text-xs font-black uppercase tracking-widest mb-6">
             BSc. (Hons) Computer Science Undergraduate
           </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight text-slate-950 dark:text-white">
             Bhanuka <br />
             <span className="text-accent-blue font-black">Janappriya</span>
           </h1>
-          <p className="text-lg md:text-xl text-accent-gray mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
+          <p className="text-lg md:text-xl text-slate-600 dark:text-accent-gray mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
             Full-Stack Developer & Researcher specializing in Image Processing and Probabilistic Symbolic Explainers (PROSE).
           </p>
 
@@ -41,32 +41,45 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: 30 }}
+          initial={{ opacity: 0, scale: 0.85, x: 30 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="relative flex justify-center items-center"
         >
           <div className="relative w-72 h-72 md:w-[450px] md:h-[450px]">
             {/* Decorative background for image */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-transparent rounded-[3rem] rotate-6 scale-105 blur-sm" />
-            <div className="absolute inset-0 border border-white/5 rounded-[3rem] -rotate-3" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/15 to-transparent dark:from-accent-blue/20 rounded-[3rem] rotate-6 scale-105 blur-sm" />
+            <div className="absolute inset-0 border border-slate-200 dark:border-white/5 rounded-[3rem] -rotate-3" />
             
-            <div className="relative w-full h-full rounded-[3rem] overflow-hidden glass p-3 border-white/10 flex items-center justify-center">
+            <div className="relative w-full h-full rounded-[3rem] overflow-hidden glass p-3 border-slate-200/50 dark:border-white/10 flex items-center justify-center">
               {!imgError ? (
-                <img 
-                  src="/myimg2.png" 
+                <motion.img 
+                  src="/myimg.png" 
                   alt="Bhanuka Janappriya" 
                   onError={() => setImgError(true)}
-                  className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 hover:scale-105"
+                  initial={{ scale: 1.3, opacity: 0, filter: 'grayscale(100%)' }}
+                  animate={{ scale: 1.1, opacity: 1, filter: 'grayscale(100%)' }}
+                  whileHover={{ scale: 1.02, filter: 'grayscale(0%)' }}
+                  transition={{ 
+                    scale: { duration: 0.8, ease: "easeInOut" },
+                    filter: { duration: 0.6, ease: "easeInOut" },
+                    opacity: { duration: 1.2 }
+                  }}
+                  className="w-full h-full object-cover rounded-[2.2rem] cursor-pointer"
                 />
               ) : (
-                <div className="w-full h-full rounded-[2.2rem] bg-gradient-to-br from-accent-blue/20 via-dark-card to-black flex flex-col items-center justify-center text-center p-6 border border-white/5">
+                <motion.div 
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="w-full h-full rounded-[2.2rem] bg-gradient-to-br from-accent-blue/10 via-slate-50 to-slate-100 dark:from-accent-blue/20 dark:via-dark-card dark:to-black flex flex-col items-center justify-center text-center p-6 border border-slate-200/50 dark:border-white/5"
+                >
                   <div className="w-24 h-24 rounded-full bg-accent-blue/10 border border-accent-blue/30 flex items-center justify-center mb-6 text-accent-blue shadow-[0_0_20px_rgba(0,113,227,0.2)]">
                     <span className="text-3xl font-black tracking-wider">BJ</span>
                   </div>
-                  <h4 className="text-xl font-black text-white mb-1">Bhanuka Janappriya</h4>
-                  <p className="text-sm text-accent-gray max-w-[240px]">Full-Stack Developer & Researcher</p>
-                </div>
+                  <h4 className="text-xl font-black text-slate-800 dark:text-white mb-1">Bhanuka Janappriya</h4>
+                  <p className="text-sm text-slate-500 dark:text-accent-gray max-w-[240px]">Full-Stack Developer & Researcher</p>
+                </motion.div>
               )}
             </div>
 
@@ -74,10 +87,10 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="absolute -top-6 -right-6 glass p-4 rounded-2xl border-white/10 hidden md:block shadow-2xl"
+              className="absolute -top-6 -right-6 glass p-4 rounded-2xl border-slate-200/50 dark:border-white/10 hidden md:block shadow-2xl"
             >
                <div className="text-[10px] font-black uppercase tracking-widest text-accent-blue mb-1">Status</div>
-               <div className="text-xs font-bold">Open for Internships</div>
+               <div className="text-xs font-bold text-slate-800 dark:text-white">Open for Internships</div>
             </motion.div>
           </div>
         </motion.div>
@@ -89,11 +102,11 @@ const Hero = () => {
         transition={{ duration: 1, delay: 0.5 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-accent-gray/30 rounded-full flex justify-center p-1">
+        <div className="w-6 h-10 border-2 border-slate-300 dark:border-accent-gray/30 rounded-full flex justify-center p-1">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-1 h-2 bg-accent-gray/50 rounded-full"
+            className="w-1 h-2 bg-slate-400 dark:bg-accent-gray/50 rounded-full"
           />
         </div>
       </motion.div>

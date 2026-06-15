@@ -293,10 +293,116 @@ const research = [
 
 const certifications = [
   {
+    title: 'DevOps Foundations',
+    issuer: 'LinkedIn',
+    date: 'Jul 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['DevOps'],
+    order: 1
+  },
+  {
+    title: 'Introduction to Career Skills in Software Development',
+    issuer: 'LinkedIn',
+    date: 'Jul 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Career Management', 'Management', 'Software Development'],
+    order: 2
+  },
+  {
+    title: 'Learning Docker',
+    issuer: 'LinkedIn',
+    date: 'Jul 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Docker Products'],
+    order: 3
+  },
+  {
+    title: 'Learning the OWASP Top 10',
+    issuer: 'LinkedIn',
+    date: 'Jul 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Web Application Security', 'OWASP'],
+    order: 4
+  },
+  {
+    title: 'Leveraging AI for Governance, Risk, and Compliance',
+    issuer: 'LinkedIn',
+    date: 'Jul 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Governance, Risk, and Compliance (GRC)', 'AI Governance'],
+    order: 5
+  },
+  {
+    title: 'Boosting Your Time Management with AI Tools',
+    issuer: 'LinkedIn',
+    date: 'Jun 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Time Management', 'AI Productivity'],
+    order: 6
+  },
+  {
+    title: 'Artificial Intelligence and Application Security',
+    issuer: 'LinkedIn',
+    date: 'Jun 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Application Security', 'Artificial Intelligence (AI)'],
+    order: 7
+  },
+  {
+    title: 'How to Grow your Creator Business with Experiments Nano Tips',
+    issuer: 'LinkedIn',
+    date: 'Jun 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Personal Branding', 'Social Media Content Creation'],
+    order: 8
+  },
+  {
+    title: 'Facebook Marketing Nano Tips for Beginners',
+    issuer: 'LinkedIn',
+    date: 'Jun 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Facebook Marketing', 'Social Media Marketing'],
+    order: 9
+  },
+  {
+    title: 'Introductory Computer Programming (Python)',
+    issuer: 'Information Technology Center (ITC)',
+    date: 'Mar 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Problem Solving', 'Python (Programming Language)'],
+    order: 10
+  },
+  {
+    title: 'Advanced Prompt Engineering Techniques',
+    issuer: 'LinkedIn',
+    date: 'Jun 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Prompt Engineering', 'Artificial Intelligence (AI)'],
+    order: 11
+  },
+  {
+    title: 'Prompt Engineering: How to Talk to the AIs',
+    issuer: 'LinkedIn',
+    date: 'Jun 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Large Language Models (LLM)', 'Prompt Engineering'],
+    order: 12
+  },
+  {
+    title: 'What Is Generative AI?',
+    issuer: 'LinkedIn',
+    date: 'Jun 2025',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/details/certifications/',
+    skills: ['Generative AI', 'Generative AI Tools'],
+    order: 13
+  },
+  {
     title: 'GitHub Pull Shark (x2)',
     issuer: 'GitHub',
     date: '2024',
-    link: 'https://github.com/BhanukaJanappriya'
+    link: 'https://github.com/BhanukaJanappriya',
+    skills: ['Open Source', 'Git'],
+    order: 14
   }
 ];
 
