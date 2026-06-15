@@ -12,6 +12,7 @@ import logoCsup from '../assets/csup.jpg';
 import logoSired from '../assets/sired.jpg';
 import logoWelead from '../assets/welead.jpg';
 import logoDataex from '../assets/dataex.jpg';
+import ChessStats from '../components/ChessStats';
 
 const Experience = () => {
   const { experience, loading } = useData();
@@ -322,6 +323,10 @@ const Experience = () => {
                           ))}
                         </div>
                       )}
+
+                      {role.title === 'Competitive Chess Player' && (
+                        <ChessStats />
+                      )}
                     </div>
                   ))}
                 </div>
@@ -430,6 +435,10 @@ const Experience = () => {
                             </span>
                           ))}
                         </div>
+                      )}
+
+                      {item.title === 'Competitive Chess Player' && (
+                        <ChessStats />
                       )}
                     </div>
                   </motion.div>

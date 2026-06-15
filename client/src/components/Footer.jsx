@@ -11,8 +11,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-10">
           <div className="mb-6 md:mb-0">
-            <a href="#" className="text-2xl font-bold tracking-tight">
-              Bhanuka<span className="text-accent-blue">.</span>
+            <a href="#" className="text-2xl font-bold tracking-tight flex items-center gap-2.5">
+              <img src="/favicon.svg" alt="BJ" className="w-9 h-9 rounded-lg object-contain shadow-sm border border-slate-200/10" />
+              <span>Bhanuka<span className="text-accent-blue">.</span></span>
             </a>
             <p className="text-accent-gray mt-2 max-w-xs">
               Building modern web experiences with a focus on design and performance.

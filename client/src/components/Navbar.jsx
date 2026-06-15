@@ -33,8 +33,9 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="text-xl font-bold tracking-tight">
-          Bhanuka<span className="text-accent-blue">.</span>
+        <a href="#" className="text-xl font-bold tracking-tight flex items-center gap-2.5">
+          <img src="/favicon.svg" alt="BJ" className="w-8 h-8 rounded-lg object-contain shadow-sm border border-slate-200/10" />
+          <span>Bhanuka<span className="text-accent-blue">.</span></span>
         </a>
 
         {/* Desktop Nav */}

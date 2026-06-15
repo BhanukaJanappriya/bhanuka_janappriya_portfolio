@@ -17,7 +17,7 @@ export const fallbackProjects = [
       'Integrated Text-to-Speech (TTS) with gender selection',
       'Conversation memory and source citation'
     ],
-    githubLink: 'https://github.com/BhanukaJanappriya',
+    githubLink: 'https://github.com/BhanukaJanappriya/RAG-based-customer_support_chatbot-.git',
     image: 'project_chatbot.jpg',
     order: 2
   },
@@ -30,7 +30,7 @@ export const fallbackProjects = [
       'Evaluation of multiple tokenization strategies',
       'Sequence labeling performance benchmarking'
     ],
-    githubLink: 'https://github.com/BhanukaJanappriya',
+    githubLink: 'https://github.com/BhanukaJanappriya/comparison-of-tokenization-and-embedding-methods-on-an-NER-pipeline-.git',
     image: 'project_ner.jpg',
     order: 3
   },
@@ -38,7 +38,7 @@ export const fallbackProjects = [
     title: 'Financial AI Agent',
     description: 'An intelligent Python-based agent engineered for financial data analysis and automated decision-making processes.',
     technologies: ['Python', 'AI Agents', 'Financial Analysis', 'Data Mining'],
-    githubLink: 'https://github.com/BhanukaJanappriya',
+    githubLink: 'https://github.com/BhanukaJanappriya/financial-ai-agent.git',
     image: 'project_finance.jpg',
     order: 4
   },
@@ -51,6 +51,7 @@ export const fallbackProjects = [
       'Hardware-software integration',
       'Computer vision-based analysis'
     ],
+    githubLink: 'https://github.com/BhanukaJanappriya/turbidity_meter_GUI.git',
     image: 'project_turbidity.jpg',
     order: 5
   },
@@ -59,8 +60,63 @@ export const fallbackProjects = [
     description: 'A machine learning initiative utilizing image processing to identify and categorize diseases in agricultural tea leaves, aiding in crop protection.',
     technologies: ['Python', 'Machine Learning', 'Computer Vision', 'Jupyter'],
     features: ['Image classification', 'Agricultural AI', 'Disease detection'],
+    githubLink: 'https://github.com/BhanukaJanappriya/tea-leaf-disease-classification.git',
     image: 'project_tealeaf.jpg',
     order: 6
+  },
+  {
+    title: 'Smart Water Tank Monitoring & Leak Detection System',
+    description: 'An IoT system engineered for real-time water level tracking and automated leak detection in residential or industrial water tanks, utilizing flow rate and ultrasonic sensors connected to a central microcontroller.',
+    technologies: ['Arduino', 'C++', 'IoT', 'Sensors', 'ESP8266'],
+    features: ['Real-time water level tracking', 'Automated flow leak alerts', 'Integrated hardware-software alerts'],
+    githubLink: 'https://github.com/BhanukaJanappriya/Smart-Water-Tank-Monitoring-and-Leak-Detection-System.git',
+    image: 'project_watertank.jpg',
+    order: 7
+  },
+  {
+    title: 'SoulCare',
+    description: 'A comprehensive healthcare and mental well-being platform designed to facilitate doctor-patient consultation scheduling, daily mood/health metric logging, and automated therapy recommendations.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+    features: ['Doctor-patient scheduling portal', 'Daily mood tracking dashboard', 'Automated therapy recommendations'],
+    githubLink: 'https://github.com/BhanukaJanappriya/SoulCare.git',
+    image: 'project_soulcare.jpg',
+    order: 8
+  },
+  {
+    title: 'Local Calendar',
+    description: 'A lightweight, offline-first, desktop calendar utility designed to run locally, prioritizing absolute data privacy while organizing schedules, reminders, and daily agendas.',
+    technologies: ['React', 'Vite', 'HTML5', 'CSS3', 'Local Storage'],
+    features: ['Offline-first architecture for data privacy', 'Custom interactive monthly view', 'Local reminder scheduling'],
+    githubLink: 'https://github.com/BhanukaJanappriya/local-calendar.git',
+    image: 'project_calendar.jpg',
+    order: 9
+  },
+  {
+    title: 'Skin Chromaticity Map',
+    description: 'A computer vision tool built to process and map skin chromaticity, performing color space analysis (RGB, HSL, Lab) and pixel categorization to assist in medical skin analysis.',
+    technologies: ['Python', 'OpenCV', 'NumPy', 'Image Processing', 'Matplotlib'],
+    features: ['Chromaticity coordinate mapping', 'RGB/HSL/Lab color space analysis', 'Dermatological image pre-processing'],
+    githubLink: 'https://github.com/BhanukaJanappriya/skin-chromaticity-map.git',
+    image: 'project_skinchroma.jpg',
+    order: 10
+  },
+  {
+    title: 'Desert Simulation',
+    description: 'An interactive ecosystem simulator that models food chain hierarchies, temperature fluctuations, and survival patterns of desert flora and fauna under arid climate cycles.',
+    technologies: ['Python', 'Pygame', 'Object-Oriented Programming', 'Ecosystem Modeling'],
+    features: ['Weather cycle & temperature simulation', 'Flora & fauna survival logic', 'Interactive visual sandbox'],
+    githubLink: 'https://github.com/BhanukaJanappriya/desert-simulation.git',
+    image: 'project_desert.jpg',
+    order: 11
+  },
+  {
+    title: 'PDF Enhancer',
+    description: 'A document enhancement utility designed to clean scans, sharpen text, reduce file size, and improve PDF scannability for digital archiving.',
+    technologies: ['Python', 'OpenCV', 'pdf2image', 'PyPDF', 'Pillow'],
+    features: ['Background noise reduction', 'Text sharpening & contrast enhancement', 'Batch document processing'],
+    githubLink: 'https://github.com/BhanukaJanappriya/pdf-enhancer.git',
+    image: 'project_pdfenhancer.jpg',
+    order: 12
   }
 ];
 
