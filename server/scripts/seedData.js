@@ -362,6 +362,22 @@ const research = [
 
 const certifications = [
   {
+    title: 'Champion | IEEE INSL Central Provincial New Innovation Competition (Hope Project)',
+    issuer: 'IEEE INSL',
+    date: '2023',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/',
+    skills: ['Innovation', 'Project Presentation', 'Problem Solving'],
+    order: -2
+  },
+  {
+    title: 'Champion | KickStart Weekend — SIRED Business Idea Competition',
+    issuer: 'SIRED',
+    date: '2023',
+    link: 'https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/',
+    skills: ['Business Strategy', 'Entrepreneurship', 'Pitching'],
+    order: -1
+  },
+  {
     title: 'DevOps Foundations',
     issuer: 'LinkedIn',
     date: 'Jul 2025',
