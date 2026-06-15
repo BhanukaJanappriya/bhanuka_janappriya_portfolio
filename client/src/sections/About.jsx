@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Award, Lightbulb, UserCheck } from 'lucide-react';
+import chessImg from '../assets/chess.jpeg';
 
 const About = () => {
   const infoCards = [
@@ -77,10 +78,17 @@ const About = () => {
             className="relative"
           >
             <div className="aspect-square rounded-3xl overflow-hidden glass p-3">
-              <div className="w-full h-full rounded-2xl bg-gradient-to-br from-accent-blue/40 via-accent-blue/10 to-transparent flex items-center justify-center relative group">
-                <span className="text-8xl font-black text-slate-200 dark:text-white/10 group-hover:text-accent-blue/20 transition-all duration-700 select-none">BJ</span>
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-3/4 h-3/4 border-2 border-slate-200 dark:border-white/5 rounded-full animate-pulse" />
+              <div className="w-full h-full rounded-2xl overflow-hidden relative group">
+                <img 
+                  src={chessImg} 
+                  alt="Chess Strategy" 
+                  className="w-full h-full object-cover rounded-xl transition-all duration-700 ease-in-out scale-105 group-hover:scale-100 grayscale group-hover:grayscale-0"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="text-left">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-accent-blue block mb-1">Passions</span>
+                    <h4 className="font-bold text-white text-lg">Competitive Chess Player</h4>
+                  </div>
                 </div>
               </div>
             </div>
