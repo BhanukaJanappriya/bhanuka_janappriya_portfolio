@@ -1,6 +1,6 @@
 # Bhanuka Janappriya - Modern MERN Portfolio
 
-A premium, Apple-inspired, mobile-first, responsive portfolio website built with the MERN stack.
+A premium, Apple-inspired, mobile-first, responsive portfolio website built with the MERN stack. Features custom local video walkthroughs of Adobe Stock and Pinterest design portfolios, interactive project showcases, custom logo mappings, and dynamic theme switching.
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
@@ -10,11 +10,19 @@ A premium, Apple-inspired, mobile-first, responsive portfolio website built with
 ![Framer Motion](https://img.shields.io/badge/Framer-Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
+## Key Features
+
+- 📱 **Apple-Inspired Responsive Design:** High-end glassmorphism aesthetic with seamless transitions between Light and Dark modes.
+- 🎬 **Creative Portfolios Walkthrough:** Dedicated "Designs" section containing high-performance browser frame video walkthroughs of your Adobe Stock and Pinterest portfolios (optimized with `.mp4` loop/autoplay show-reels).
+- 🎨 **Dynamic Project Cards:** Detailed card views with custom-designed project illustrations, tech tags, and overlay links for GitHub & live demos.
+- 💼 **Custom Logo Mapping:** Native rendering of official logos for **University of Peradeniya**, **CSUP**, **SIRED**, **We Lead**, **DataEx**, and **Adobe** inside the grouped and chronological experience sections.
+- ⚡ **Expanded Skill Arsenal:** Dynamic icon rendering for newly added skills, including **Docker**, **Onshape**, **CapCut**, **Canva**, **Microsoft Office**, **Excel**, and **PowerPoint**.
+
 ## Tech Stack
 
-- **Frontend:** React, Vite, Tailwind CSS, Framer Motion, Axios
+- **Frontend:** React, Vite, Tailwind CSS, Framer Motion, Axios, Lucide React
 - **Backend:** Node.js, Express, MongoDB, Mongoose, Nodemailer
-- **Design:** Apple-inspired aesthetics, Glassmorphism, Dark Mode Default
+- **Design:** Modern glassmorphism, responsive viewports, default dark theme with customized light mode gradient overrides.
 
 ## Project Structure
 
@@ -22,30 +30,31 @@ A premium, Apple-inspired, mobile-first, responsive portfolio website built with
 bhanuka_janappriya_portfolio/
 ├── client/             # React + Vite frontend
 │   ├── src/
-│   │   ├── components/ # Reusable UI components
-│   │   ├── context/    # Theme and Data context
-│   │   ├── sections/   # Portfolio sections (Hero, About, etc.)
-│   │   └── services/   # API client
+│   │   ├── assets/     # Media, icons, and local video walkthrough files
+│   │   ├── components/ # Reusable UI components (Navbar, Footer, etc.)
+│   │   ├── context/    # Theme and Data context provider hooks
+│   │   ├── sections/   # Portfolio sections (Hero, About, Experience, AdobeStock, etc.)
+│   │   └── services/   # Axios API client setup
 ├── server/             # Node.js + Express backend
-│   ├── models/         # Mongoose schemas
-│   ├── routes/         # API endpoints
-│   ├── controllers/    # Business logic
-│   └── scripts/        # Data seeding scripts
+│   ├── models/         # Mongoose DB schemas (Project, Skill, Experience, etc.)
+│   ├── routes/         # Express API endpoint router controllers
+│   ├── controllers/    # API business logic handlers
+│   └── scripts/        # Database seeding scripts (seedData.js)
 ```
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js installed
-- MongoDB Atlas account (or local MongoDB)
+- Node.js installed locally
+- MongoDB Atlas account (or local MongoDB community instance)
 
 ### Setup
 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/BhanukaJanappriya/bhanuka_janappriya_portfolio.git
-   cd bhanuka_janappriya_portfolio
+   cd bhankua_janappriya_portfolio
    ```
 
 2. **Backend Setup:**
@@ -60,9 +69,9 @@ bhanuka_janappriya_portfolio/
    EMAIL_USER=your_email@gmail.com
    EMAIL_PASS=your_app_password
    ```
-   Seed the database with initial data:
+   Seed the database with initial projects and skills data:
    ```bash
-   npm run seed # You may need to add this script to package.json
+   node scripts/seedData.js
    ```
 
 3. **Frontend Setup:**
@@ -70,19 +79,19 @@ bhanuka_janappriya_portfolio/
    cd ../client
    npm install
    ```
-   Create a `.env` file in the `client` directory (optional, defaults to localhost:5000):
+   Create a `.env` file in the `client` directory:
    ```env
    VITE_API_URL=http://localhost:5000/api
    ```
 
 ### Running the Project
 
-- **Start Backend:**
+- **Start Backend Server:**
   ```bash
   cd server
-  npm run dev # Ensure nodemon is configured
+  npm run dev
   ```
-- **Start Frontend:**
+- **Start Frontend Client:**
   ```bash
   cd client
   npm run dev
@@ -90,10 +99,10 @@ bhanuka_janappriya_portfolio/
 
 ## Future Improvements
 
-- [ ] Add a dashboard for managing portfolio content without code.
-- [ ] Integrate more GitHub API statistics.
-- [ ] Add a blog section.
-- [ ] Implement multi-language support.
+- [ ] Add an admin dashboard for managing projects and skills dynamically from the browser.
+- [ ] Integrate real-time GitHub metrics.
+- [ ] Implement a blog section for articles and tutorials.
+- [ ] Multi-language support.
 
 ## License
 

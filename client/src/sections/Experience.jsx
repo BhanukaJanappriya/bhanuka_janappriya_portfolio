@@ -62,6 +62,16 @@ const Experience = () => {
       );
     }
 
+    if (name.includes('adobe')) {
+      return (
+        <div className={`${sizeClass} rounded-2xl bg-[#FF0000] flex items-center justify-center text-white shadow-sm select-none transition-all duration-300 p-2.5`}>
+          <svg viewBox="0 0 512 512" fill="white" className="w-full h-full">
+            <path d="M309 64h139v384L309 64zm-106 0H64v384L203 64zm29.3 129.3l72.2 201.2h-53.7l-18.4-51.4h-64.8l-18.4 51.4H47.4l72.2-201.2h56.8z" />
+          </svg>
+        </div>
+      );
+    }
+
     const iconSize = sizeClass.includes("w-10") ? 18 : 24;
     return (
       <div className={`${sizeClass} bg-slate-100 dark:bg-white/5 rounded-2xl flex items-center justify-center border border-slate-200/60 dark:border-white/10 group-hover:border-accent-blue/30 group-hover:bg-slate-200 dark:group-hover:bg-white/10 transition-all duration-300 shadow-inner`}>

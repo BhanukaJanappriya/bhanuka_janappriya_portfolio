@@ -25,7 +25,7 @@ const projects = [
       'Integrated Text-to-Speech (TTS) with gender selection',
       'Conversation memory and source citation'
     ],
-    githubLink: 'https://github.com/BhanukaJanappriya',
+    githubLink: 'https://github.com/BhanukaJanappriya/RAG-based-customer_support_chatbot-.git',
     image: 'project_chatbot.jpg',
     order: 2
   },
@@ -38,7 +38,7 @@ const projects = [
       'Evaluation of multiple tokenization strategies',
       'Sequence labeling performance benchmarking'
     ],
-    githubLink: 'https://github.com/BhanukaJanappriya',
+    githubLink: 'https://github.com/BhanukaJanappriya/comparison-of-tokenization-and-embedding-methods-on-an-NER-pipeline-.git',
     image: 'project_ner.jpg',
     order: 3
   },
@@ -46,7 +46,7 @@ const projects = [
     title: 'Financial AI Agent',
     description: 'An intelligent Python-based agent engineered for financial data analysis and automated decision-making processes.',
     technologies: ['Python', 'AI Agents', 'Financial Analysis', 'Data Mining'],
-    githubLink: 'https://github.com/BhanukaJanappriya',
+    githubLink: 'https://github.com/BhanukaJanappriya/financial-ai-agent.git',
     image: 'project_finance.jpg',
     order: 4
   },
@@ -59,6 +59,7 @@ const projects = [
       'Hardware-software integration',
       'Computer vision-based analysis'
     ],
+    githubLink: 'https://github.com/BhanukaJanappriya/turbidity_meter_GUI.git',
     image: 'project_turbidity.jpg',
     order: 5
   },
@@ -67,6 +68,7 @@ const projects = [
     description: 'A machine learning initiative utilizing image processing to identify and categorize diseases in agricultural tea leaves, aiding in crop protection.',
     technologies: ['Python', 'Machine Learning', 'Computer Vision', 'Jupyter'],
     features: ['Image classification', 'Agricultural AI', 'Disease detection'],
+    githubLink:'https://github.com/BhanukaJanappriya/tea-leaf-disease-classification.git',
     image: 'project_tealeaf.jpg',
     order: 6
   }
