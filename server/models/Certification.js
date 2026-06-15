@@ -5,6 +5,7 @@ const certificationSchema = new mongoose.Schema({
   issuer: { type: String, required: true },
   date: String,
   link: String,
+  skills: [String],
   order: { type: Number, default: 0 }
 });
 
