@@ -105,10 +105,10 @@ const AdobeStock = () => {
                 </div>
 
                 {/* Viewport Area - Custom Video Player */}
-                <div className="relative flex-1 min-h-[400px] md:min-h-[450px] bg-slate-50 dark:bg-black/20 flex flex-col justify-center items-center overflow-hidden">
+                <div className="relative w-full aspect-video bg-slate-50 dark:bg-black/20 overflow-hidden flex items-center justify-center">
                   <video 
                     src={portfolio.videoSrc}
-                    className="w-full h-full object-contain max-h-[550px] aspect-video"
+                    className="w-full h-full object-cover"
                     autoPlay
                     loop
                     muted
