@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Globe } from 'lucide-react';
 import { FaPinterest } from 'react-icons/fa';
-const adobestockVideo = "https://www.dropbox.com/scl/fi/xphyfr7m7l4qwm600aa7s/adobestock.mp4?rlkey=eyih01j5y9ufxafdwbipyxni8&st=ivpmk630&raw=1";
-const pinterestVideo = "https://www.dropbox.com/scl/fi/f0jed5b6m2crmrn79jee0/pinterest.mp4?rlkey=h9wka3yvjltmzyn42katy45i8&st=13hc9b7k&raw=1";
+import adobestockVideo from '../assets/adobestock.mp4';
+import pinterestVideo from '../assets/pinterest.mp4';
 
 const AdobeStock = () => {
   const portfolios = [
