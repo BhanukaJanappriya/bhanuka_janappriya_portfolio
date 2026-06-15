@@ -57,14 +57,15 @@ const Hero = () => {
                   src="/myimg.png" 
                   alt="Bhanuka Janappriya" 
                   onError={() => setImgError(true)}
-                  initial={{ scale: 1.25, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  whileHover={{ scale: 1.08 }}
+                  initial={{ scale: 1.3, opacity: 0, filter: 'grayscale(100%)' }}
+                  animate={{ scale: 1.1, opacity: 1, filter: 'grayscale(100%)' }}
+                  whileHover={{ scale: 1.02, filter: 'grayscale(0%)' }}
                   transition={{ 
-                    scale: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
-                    opacity: { duration: 1 }
+                    scale: { duration: 0.8, ease: "easeInOut" },
+                    filter: { duration: 0.6, ease: "easeInOut" },
+                    opacity: { duration: 1.2 }
                   }}
-                  className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-pointer"
+                  className="w-full h-full object-cover rounded-[2.2rem] cursor-pointer"
                 />
               ) : (
                 <motion.div 
