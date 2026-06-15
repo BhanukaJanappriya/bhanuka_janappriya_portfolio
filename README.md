@@ -13,9 +13,11 @@ A premium, Apple-inspired, mobile-first, responsive portfolio website built with
 ## Key Features
 
 - 📱 **Apple-Inspired Responsive Design:** High-end glassmorphism aesthetic with seamless transitions between Light and Dark modes.
-- 🎬 **Creative Portfolios Walkthrough:** Dedicated "Designs" section containing high-performance browser frame video walkthroughs of your Adobe Stock and Pinterest portfolios (optimized with `.mp4` loop/autoplay show-reels).
+- 🎬 **Creative Portfolios Walkthrough:** Dedicated "Designs" section containing high-performance browser frame video walkthroughs of your Adobe Stock and Pinterest portfolios (optimized with local `.mp4` loop/autoplay show-reels).
 - 🎨 **Dynamic Project Cards:** Detailed card views with custom-designed project illustrations, tech tags, and overlay links for GitHub & live demos.
 - 💼 **Custom Logo Mapping:** Native rendering of official logos for **University of Peradeniya**, **CSUP**, **SIRED**, **We Lead**, **DataEx**, and **Adobe** inside the grouped and chronological experience sections.
+- ♟️ **Live Chess.com Stats Integration:** Beautiful interactive dashboard fetching and displaying live ratings, peak ratings, and match records (wins, draws, losses) directly from Chess.com's PubAPI with cached local fallbacks.
+- 🏷️ **BJ Branding Logo:** Custom vector branding squircle icon ("B" in blue, "J" in white on a sleek black gradient background) integrated as the website favicon and navbar/footer brand logo.
 - ⚡ **Expanded Skill Arsenal:** Dynamic icon rendering for newly added skills, including **Docker**, **Onshape**, **CapCut**, **Canva**, **Microsoft Office**, **Excel**, and **PowerPoint**.
 
 ## Tech Stack
