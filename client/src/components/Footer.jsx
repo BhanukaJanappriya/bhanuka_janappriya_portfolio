@@ -1,4 +1,4 @@
-import { Mail, ArrowUp } from 'lucide-react';
+import { Mail, Phone, ArrowUp } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaPinterest } from 'react-icons/fa';
 
 const Footer = () => {
@@ -31,6 +31,9 @@ const Footer = () => {
             </a>
             <a href="https://www.pinterest.com/bhanukajanappriya2001/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors" title="Pinterest">
               <FaPinterest size={24} />
+            </a>
+            <a href="tel:074-1517689" className="hover:text-accent-blue transition-colors" title="Phone (074-1517689)">
+              <Phone size={24} />
             </a>
             <a href="mailto:bhanukajanappriya2001@gmail.com" className="hover:text-accent-blue transition-colors" title="Email">
               <Mail size={24} />

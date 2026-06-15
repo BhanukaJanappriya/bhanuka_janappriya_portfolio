@@ -4,6 +4,7 @@ export const fallbackProjects = [
     description: 'Final year research project developing a framework to provide interpretable, symbolic explanations for complex probabilistic models. Focused on bridging the gap between high-performance "black-box" AI and human-understandable logic.',
     technologies: ['Python', 'Probabilistic Modeling', 'Symbolic Logic', 'Explainable AI'],
     features: ['Probabilistic explanations', 'Symbolic reasoning', 'Interpretability framework'],
+    image: 'project_prose.jpg',
     order: 1
   },
   {
@@ -17,6 +18,7 @@ export const fallbackProjects = [
       'Conversation memory and source citation'
     ],
     githubLink: 'https://github.com/BhanukaJanappriya',
+    image: 'project_chatbot.jpg',
     order: 2
   },
   {
@@ -29,6 +31,7 @@ export const fallbackProjects = [
       'Sequence labeling performance benchmarking'
     ],
     githubLink: 'https://github.com/BhanukaJanappriya',
+    image: 'project_ner.jpg',
     order: 3
   },
   {
@@ -36,6 +39,7 @@ export const fallbackProjects = [
     description: 'An intelligent Python-based agent engineered for financial data analysis and automated decision-making processes.',
     technologies: ['Python', 'AI Agents', 'Financial Analysis', 'Data Mining'],
     githubLink: 'https://github.com/BhanukaJanappriya',
+    image: 'project_finance.jpg',
     order: 4
   },
   {
@@ -47,6 +51,7 @@ export const fallbackProjects = [
       'Hardware-software integration',
       'Computer vision-based analysis'
     ],
+    image: 'project_turbidity.jpg',
     order: 5
   },
   {
@@ -54,6 +59,7 @@ export const fallbackProjects = [
     description: 'A machine learning initiative utilizing image processing to identify and categorize diseases in agricultural tea leaves, aiding in crop protection.',
     technologies: ['Python', 'Machine Learning', 'Computer Vision', 'Jupyter'],
     features: ['Image classification', 'Agricultural AI', 'Disease detection'],
+    image: 'project_tealeaf.jpg',
     order: 6
   }
 ];

@@ -4,6 +4,22 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Code, CheckCircle2 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
+import projectProse from '../assets/project_prose.jpg';
+import projectChatbot from '../assets/project_chatbot.jpg';
+import projectNer from '../assets/project_ner.jpg';
+import projectFinance from '../assets/project_finance.jpg';
+import projectTurbidity from '../assets/project_turbidity.jpg';
+import projectTealeaf from '../assets/project_tealeaf.jpg';
+
+const projectImages = {
+  'project_prose.jpg': projectProse,
+  'project_chatbot.jpg': projectChatbot,
+  'project_ner.jpg': projectNer,
+  'project_finance.jpg': projectFinance,
+  'project_turbidity.jpg': projectTurbidity,
+  'project_tealeaf.jpg': projectTealeaf,
+};
+
 const Projects = () => {
   const { projects, loading } = useData();
   const [filter, setFilter] = useState('All');
@@ -62,20 +78,30 @@ const Projects = () => {
                 transition={{ duration: 0.5 }}
                 className="glass rounded-[2.5rem] overflow-hidden flex flex-col group border-slate-200/50 dark:border-white/5 hover:border-accent-blue/20 transition-all duration-500 shadow-sm hover:shadow-xl"
               >
-                <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-accent-blue/10 via-slate-100 to-slate-200 dark:from-accent-blue/20 dark:via-black dark:to-black p-12 flex items-center justify-center">
-                  <Code size={80} className="text-accent-blue/10 group-hover:scale-110 group-hover:text-accent-blue/20 transition-all duration-700" />
+                <div className="relative aspect-video overflow-hidden bg-slate-100 dark:bg-black/40 flex items-center justify-center">
+                  {project.image && projectImages[project.image] ? (
+                    <img 
+                      src={projectImages[project.image]} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-accent-blue/10 via-slate-100 to-slate-200 dark:from-accent-blue/20 dark:via-black dark:to-black flex items-center justify-center">
+                      <Code size={80} className="text-accent-blue/10 group-hover:scale-110 group-hover:text-accent-blue/20 transition-all duration-700" />
+                    </div>
+                  )}
                   
                   {project.technologies && project.technologies.length > 0 && (
-                    <div className="absolute top-6 left-6 flex space-x-2">
+                    <div className="absolute top-6 left-6 flex space-x-2 z-20">
                        {project.technologies.slice(0, 2).map(tech => (
-                          <span key={tech} className="glass px-3 py-1 rounded-lg text-[9px] font-black text-white/50 uppercase tracking-tighter">
+                          <span key={tech} className="glass px-3 py-1 rounded-lg text-[9px] font-black text-white/70 dark:text-white/50 uppercase tracking-tighter">
                              {tech}
                           </span>
                        ))}
                     </div>
                   )}
 
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center space-x-6">
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center space-x-6 z-20">
                     {project.githubLink && (
                       <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="p-4 bg-white text-black rounded-full hover:bg-accent-blue hover:text-white transition-all transform hover:scale-110">
                         <FaGithub size={24} />
