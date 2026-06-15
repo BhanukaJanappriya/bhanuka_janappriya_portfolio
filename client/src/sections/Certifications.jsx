@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useData } from '../context/DataContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Award, ExternalLink, ChevronDown, ChevronUp, GraduationCap, ShieldAlert, Cpu, Terminal, Compass } from 'lucide-react';
+import { Award, ExternalLink, ChevronDown, ChevronUp, GraduationCap, ShieldAlert, Cpu, Terminal, Compass, Trophy } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Certifications = () => {
@@ -12,6 +12,9 @@ const Certifications = () => {
   // Grouping/Category helper
   const getCategory = (cert) => {
     const title = cert.title.toLowerCase();
+    if (title.includes('champion') || title.includes('competition') || title.includes('kickstart') || title.includes('achievement')) {
+      return 'awards';
+    }
     if (title.includes('devops') || title.includes('docker') || title.includes('owasp') || title.includes('security')) {
       return 'security-devops';
     }
@@ -26,6 +29,9 @@ const Certifications = () => {
     const titleLower = title.toLowerCase();
     const issuerLower = issuer.toLowerCase();
 
+    if (titleLower.includes('champion') || titleLower.includes('competition') || titleLower.includes('kickstart')) {
+      return <Trophy className="text-amber-500 dark:text-amber-400 animate-pulse" size={24} />;
+    }
     if (issuerLower.includes('github')) {
       return <FaGithub className="text-white" size={24} />;
     }
@@ -88,6 +94,7 @@ const Certifications = () => {
           <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
             {[
               { id: 'all', label: 'All Certificates' },
+              { id: 'awards', label: 'Achievements & Awards' },
               { id: 'security-devops', label: 'DevOps & Security' },
               { id: 'ai-prompting', label: 'AI & Prompting' },
               { id: 'dev-skills', label: 'Development & Core' }
