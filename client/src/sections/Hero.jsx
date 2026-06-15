@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="relative w-full h-full rounded-[3rem] overflow-hidden glass p-3 border-white/10 flex items-center justify-center">
               {!imgError ? (
                 <img 
-                  src="/myimg2.png" 
+                  src="/myimg.png" 
                   alt="Bhanuka Janappriya" 
                   onError={() => setImgError(true)}
                   className="w-full h-full object-cover rounded-[2.2rem] grayscale hover:grayscale-0 transition-all duration-700 ease-in-out scale-110 hover:scale-105"
