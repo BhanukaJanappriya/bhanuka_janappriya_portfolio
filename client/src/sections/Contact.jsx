@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, MapPin, Loader2 } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaPinterest } from 'react-icons/fa';
 import { sendMessage } from '../services/api';
 
 const Contact = () => {
@@ -84,11 +84,17 @@ const Contact = () => {
             </div>
 
             <div className="flex space-x-6 mt-12">
-              <a href="https://github.com/BhanukaJanappriya" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors">
+              <a href="https://github.com/BhanukaJanappriya" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors" title="GitHub">
                 <FaGithub size={24} />
               </a>
-              <a href="https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors">
+              <a href="https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors" title="LinkedIn">
                 <FaLinkedin size={24} />
+              </a>
+              <a href="https://www.instagram.com/bhanuka_1.618/" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors" title="Instagram">
+                <FaInstagram size={24} />
+              </a>
+              <a href="https://www.pinterest.com/bhanukajanappriya2001/" target="_blank" rel="noopener noreferrer" className="p-4 glass rounded-full hover:text-accent-blue transition-colors" title="Pinterest">
+                <FaPinterest size={24} />
               </a>
             </div>
           </motion.div>

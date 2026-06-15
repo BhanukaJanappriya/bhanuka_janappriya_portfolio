@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, ArrowUp } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaPinterest } from 'react-icons/fa';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -21,13 +21,19 @@ const Footer = () => {
           </div>
 
           <div className="flex space-x-6">
-            <a href="https://github.com/BhanukaJanappriya" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors">
+            <a href="https://github.com/BhanukaJanappriya" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors" title="GitHub">
               <FaGithub size={24} />
             </a>
-            <a href="https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors">
+            <a href="https://www.linkedin.com/in/bhanuka-janappriya-nambuwasam/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors" title="LinkedIn">
               <FaLinkedin size={24} />
             </a>
-            <a href="mailto:your-email@gmail.com" className="hover:text-accent-blue transition-colors">
+            <a href="https://www.instagram.com/bhanuka_1.618/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors" title="Instagram">
+              <FaInstagram size={24} />
+            </a>
+            <a href="https://www.pinterest.com/bhanukajanappriya2001/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-blue transition-colors" title="Pinterest">
+              <FaPinterest size={24} />
+            </a>
+            <a href="mailto:bhanukajanappriya2001@gmail.com" className="hover:text-accent-blue transition-colors" title="Email">
               <Mail size={24} />
             </a>
           </div>
