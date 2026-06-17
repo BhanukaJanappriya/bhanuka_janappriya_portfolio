@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 const Hero = () => {
   const [imgError, setImgError] = useState(false);
@@ -36,6 +36,14 @@ const Hero = () => {
             </a>
             <a href="#contact" className="btn-secondary font-bold">
               Let's Talk
+            </a>
+            <a 
+              href="/Bhanuka_JanappriyaCV.pdf" 
+              download="Bhanuka_Janappriya_CV.pdf" 
+              className="px-6 py-3.5 rounded-full text-slate-800 dark:text-white font-extrabold text-xs md:text-sm tracking-wide uppercase transition-all duration-300 hover:scale-105 border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 flex items-center space-x-2 shadow-sm"
+            >
+              <Download size={16} />
+              <span>Download CV</span>
             </a>
           </div>
         </motion.div>

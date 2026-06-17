@@ -25,7 +25,5 @@ dist-ssr
 *.sw?
 
 # Large Assets (Ignored for git history size)
-src/assets/cv.png
 src/assets/myimg2.png
-public/cv.png
 public/myimg2.png

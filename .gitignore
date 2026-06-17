@@ -6,7 +6,5 @@ build/
 *.log
 
 # Large Assets (Ignored for git history size)
-client/src/assets/cv.png
 client/src/assets/myimg2.png
-client/public/cv.png
 client/public/myimg2.png
