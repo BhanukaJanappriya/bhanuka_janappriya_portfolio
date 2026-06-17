@@ -78,7 +78,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-800 dark:text-white">Location</h4>
-                  <p className="text-slate-500 dark:text-accent-gray font-medium">Kandy, Sri Lanka</p>
+                  <p className="text-slate-500 dark:text-accent-gray font-medium">No.20, Kudamaduwa road, Mattegoda</p>
                 </div>
               </div>
             </div>
