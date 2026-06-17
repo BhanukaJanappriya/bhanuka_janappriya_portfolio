@@ -1,8 +1,97 @@
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Award, Lightbulb, UserCheck } from 'lucide-react';
 import chessImg from '../assets/chess.jpeg';
 
+const Typewriter = ({ segments, speed = 8, startTrigger = true, onComplete }) => {
+  const [displayedText, setDisplayedText] = useState([]);
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    if (!startTrigger) return;
+
+    let totalLength = 0;
+    const flatSegments = segments.map((seg) => {
+      const start = totalLength;
+      totalLength += seg.text.length;
+      return { ...seg, start, end: totalLength };
+    });
+
+    let currentLength = 0;
+    const interval = setInterval(() => {
+      currentLength += 1.5; // Slightly faster type speed for high-volume text
+      const index = Math.floor(currentLength);
+      
+      if (index >= totalLength) {
+        setIsComplete(true);
+        clearInterval(interval);
+        if (onComplete) onComplete();
+      }
+
+      const activeSegments = [];
+      for (const seg of flatSegments) {
+        if (index >= seg.end) {
+          activeSegments.push(seg);
+        } else if (index > seg.start) {
+          activeSegments.push({
+            ...seg,
+            text: seg.text.slice(0, index - seg.start)
+          });
+          break;
+        } else {
+          break;
+        }
+      }
+      setDisplayedText(activeSegments);
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [segments, speed, startTrigger, onComplete]);
+
+  if (!startTrigger) return null;
+
+  return (
+    <span className="relative">
+      {displayedText.map((seg, i) => (
+        <span key={i} className={seg.className}>
+          {seg.text}
+        </span>
+      ))}
+      {!isComplete && (
+        <span className="inline-block w-1.5 h-4 ml-0.5 bg-accent-blue animate-pulse align-middle">|</span>
+      )}
+    </span>
+  );
+};
+
 const About = () => {
+  const [headingDone, setHeadingDone] = useState(false);
+  const [p1Done, setP1Done] = useState(false);
+
+  const headingSegments = [
+    { text: "Full-Stack Developer & Researcher" }
+  ];
+
+  const paragraph1Segments = [
+    { text: "I am a results-driven Computer Science undergraduate at the " },
+    { text: "University of Peradeniya", className: "text-slate-900 dark:text-white font-medium" },
+    { text: ", with a proven track record in architecting scalable web applications and AI-driven systems. My work is defined by a unique intersection of " },
+    { text: "Full-Stack Engineering", className: "text-slate-900 dark:text-white font-medium" },
+    { text: ", " },
+    { text: "Computer Vision", className: "text-slate-900 dark:text-white font-medium" },
+    { text: ", and " },
+    { text: "Explainable AI", className: "text-slate-900 dark:text-white font-medium" },
+    { text: "." }
+  ];
+
+  const paragraph2Segments = [
+    { text: "Currently, I am spearheading research on " },
+    { text: "PROSE (Probabilistic Symbolic Explainer)", className: "text-slate-900 dark:text-white font-medium" },
+    { text: ", aiming to enhance the transparency of complex AI models. My experience as a professional Graphic Designer and Adobe Stock contributor ensures that I bring a high level of " },
+    { text: "UI/UX polish", className: "text-slate-900 dark:text-white font-medium" },
+    { text: " and visual storytelling to every technical project I deliver." }
+  ];
+
   const infoCards = [
     {
       icon: <GraduationCap size={24} />,
@@ -39,7 +128,7 @@ const About = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">Professional Profile</h2>
           <div className="w-20 h-1 bg-accent-blue mx-auto rounded-full" />
         </motion.div>
-
+ 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -47,12 +136,25 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white">Full-Stack Developer & Researcher</h3>
-            <p className="text-lg text-slate-600 dark:text-accent-gray leading-relaxed mb-6">
-              I am a results-driven Computer Science undergraduate at the <span className="text-slate-900 dark:text-white font-medium">University of Peradeniya</span>, with a proven track record in architecting scalable web applications and AI-driven systems. My work is defined by a unique intersection of <span className="text-slate-900 dark:text-white font-medium">Full-Stack Engineering</span>, <span className="text-slate-900 dark:text-white font-medium">Computer Vision</span>, and <span className="text-slate-900 dark:text-white font-medium">Explainable AI</span>.
+            <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-white">
+              <Typewriter 
+                segments={headingSegments} 
+                startTrigger={true} 
+                onComplete={() => setHeadingDone(true)} 
+              />
+            </h3>
+            <p className="text-lg text-slate-600 dark:text-accent-gray leading-relaxed mb-6 min-h-[120px] sm:min-h-[80px]">
+              <Typewriter 
+                segments={paragraph1Segments} 
+                startTrigger={headingDone} 
+                onComplete={() => setP1Done(true)} 
+              />
             </p>
-            <p className="text-lg text-slate-600 dark:text-accent-gray leading-relaxed mb-8">
-              Currently, I am spearheading research on **PROSE (Probabilistic Symbolic Explainer)**, aiming to enhance the transparency of complex AI models. My experience as a professional Graphic Designer and Adobe Stock contributor ensures that I bring a high level of <span className="text-slate-900 dark:text-white font-medium">UI/UX polish</span> and visual storytelling to every technical project I deliver.
+            <p className="text-lg text-slate-600 dark:text-accent-gray leading-relaxed mb-8 min-h-[120px] sm:min-h-[80px]">
+              <Typewriter 
+                segments={paragraph2Segments} 
+                startTrigger={p1Done} 
+              />
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
