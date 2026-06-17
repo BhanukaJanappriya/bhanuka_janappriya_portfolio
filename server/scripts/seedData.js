@@ -488,6 +488,22 @@ const certifications = [
     link: 'https://github.com/BhanukaJanappriya',
     skills: ['Open Source', 'Git'],
     order: 14
+  },
+  {
+    title: 'GitHub Galaxy Brain',
+    issuer: 'GitHub',
+    date: '2024',
+    link: 'https://github.com/BhanukaJanappriya',
+    skills: ['Collaboration', 'Community Support', 'Problem Solving'],
+    order: 15
+  },
+  {
+    title: 'GitHub Quickdraw',
+    issuer: 'GitHub',
+    date: '2024',
+    link: 'https://github.com/BhanukaJanappriya',
+    skills: ['Rapid Response', 'Agile Development', 'Git'],
+    order: 16
   }
 ];
 

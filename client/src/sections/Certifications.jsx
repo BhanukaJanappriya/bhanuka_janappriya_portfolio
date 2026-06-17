@@ -12,7 +12,16 @@ const Certifications = () => {
   // Grouping/Category helper
   const getCategory = (cert) => {
     const title = cert.title.toLowerCase();
-    if (title.includes('champion') || title.includes('competition') || title.includes('kickstart') || title.includes('achievement')) {
+    if (
+      title.includes('champion') || 
+      title.includes('competition') || 
+      title.includes('kickstart') || 
+      title.includes('achievement') || 
+      title.includes('github') || 
+      title.includes('shark') || 
+      title.includes('brain') || 
+      title.includes('quickdraw')
+    ) {
       return 'awards';
     }
     if (title.includes('devops') || title.includes('docker') || title.includes('owasp') || title.includes('security')) {
