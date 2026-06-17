@@ -70,6 +70,8 @@ Render is an excellent cloud platform that hosts Node.js apps for free.
    * Click **Advanced** and add the following:
      * `MONGO_URI` = Your MongoDB Atlas connection string.
      * `NODE_ENV` = `production`
+     * `EMAIL_USER` = `bhanukajanappriya2001@gmail.com`
+     * `EMAIL_PASS` = Your 16-character Google App Password (not your regular Gmail password).
    * *Note: Render automatically manages the `PORT` variable internally.*
 
 4. **Deploy:**

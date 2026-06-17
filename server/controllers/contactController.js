@@ -25,8 +25,9 @@ const sendMessage = async (req, res) => {
     });
 
     const mailOptions = {
-      from: email,
-      to: process.env.EMAIL_USER,
+      from: `"${name}" <${process.env.EMAIL_USER}>`,
+      replyTo: email,
+      to: 'bhanukajanappriya2001@gmail.com',
       subject: `Portfolio Contact: ${subject || 'New Message'}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     };
